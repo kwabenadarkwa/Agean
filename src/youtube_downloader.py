@@ -1,28 +1,29 @@
 from pytubefix import YouTube
-from pytubefix.cli import on_progress
-# class DownloaderReturnTyppe:
-#     def __init__(self,video_link,file_location,title,channel_name,video_transcript) -> None:
-#         self.video_link = video_link
-#         self.file_location = file_location
-#         self.title = title
-#         self.channel_name = channel_name
-#         self.video_transcript = video_transcript
-#
+# from pytubefix.cli import on_progress
+
+
+class DownloaderReturnType:
+    ## INFO: there is no need to return the output path because the output path is the default one
+    def __init__(self, title, link, transcript):
+        self.title = title
+        self.link = link
+        ##TODO: it is possible that I might have to change this to a dictionary or something and need it later
+        self.transcript = transcript
+
+    def __str__(self):
+        return f"Title: {self.title
+        }\nVideo Link: {self.link
+        }\nTranscript: {self.transcript}"
 
 
 class YoutubeDownloader:
     def __init__(self, link: str) -> None:
         self.link = link
 
-    # create function for downloading videos that returns the link to the videos
-    # location in the file tree and then data about the video.
-    # data: title, youtube channel, video transcript.
-    def download_video(self):
-        yt = YouTube(self.link, on_progress_callback=on_progress)
-        print(yt.title)
+    def download_video(self) -> DownloaderReturnType:
+        yt = YouTube(self.link)
         ys = yt.streams.get_highest_resolution()
         ys.download(output_path="Videos")
-
-            
-
-      
+        return DownloaderReturnType(
+            yt.title, self.link, yt.captions["en"].generate_srt_captions()
+        )
