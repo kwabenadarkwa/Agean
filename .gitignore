@@ -55,6 +55,7 @@ cover/
 *.mo
 *.pot
 
+*.mp4
 # Django stuff:
 *.log
 local_settings.py
@@ -150,7 +151,7 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
-src/Videos/
+src/Videos/*
 
 # Cython debug symbols
 cython_debug/

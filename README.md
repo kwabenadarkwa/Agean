@@ -24,6 +24,7 @@ python3 main.py
 ```
 
 ## TODO
-- [ ] figure out how to extract other details from the video and then put it into an object
+- [x] figure out how to extract other details from the video and then put it into an object
+- [ ] separate the video into frames
 - [ ] continue with the next section of identifying bounding box
 
