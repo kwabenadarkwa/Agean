@@ -1,7 +1,5 @@
 import pathlib
-
 from pytubefix import YouTube
-
 # from pytubefix.cli import on_progress
 
 
@@ -11,7 +9,6 @@ class DownloaderReturnType:
         self.title = title
         self.link = link
         self.filepath = filepath
-        ##TODO: it is possible that I might have to change this to a dictionary or something and need it later
         self.transcript = transcript
 
     def __str__(self):

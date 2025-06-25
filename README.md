@@ -25,6 +25,6 @@ python3 main.py
 
 ## TODO
 - [x] figure out how to extract other details from the video and then put it into an object
-- [ ] separate the video into frames
-- [ ] continue with the next section of identifying bounding box
+- [x] separate the video into frames
+- [ ] read SIFT documentation and use it to remove duplicate frames
 
