@@ -1,10 +1,13 @@
 import pathlib
+
 from pytubefix import YouTube
+
 # from pytubefix.cli import on_progress
 
 
 class DownloaderReturnType:
-    ## INFO: there is no need to return the output path because the output path is the default one
+    """This class represents the return type of the `download_video` function."""
+
     def __init__(self, title, link, filepath, transcript):
         self.title = title
         self.link = link
@@ -18,10 +21,23 @@ class DownloaderReturnType:
 
 
 def download_video(link) -> DownloaderReturnType:
+    """This function downloads a video from a link.
+    Args:
+        link (str): The link to the video.
+    Returns:
+        DownloaderReturnType: The return type of the function.
+    Raises:
+    """
     yt = YouTube(link)
     filepath = pathlib.Path("Videos", yt.title + ".mp4")
+
+    if yt.captions.get("en"):
+        captions = yt.captions["en"].generate_srt_captions()
+    elif yt.captions.get("a.en"):
+        captions = yt.captions["a.en"].generate_srt_captions()
+    else:
+        captions = None
+
     ys = yt.streams.get_highest_resolution()
     ys.download(output_path="Videos")
-    return DownloaderReturnType(
-        yt.title, link, filepath, yt.captions["en"].generate_srt_captions()
-    )
+    return DownloaderReturnType(yt.title, link, filepath, captions)

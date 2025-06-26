@@ -1,7 +1,10 @@
 ffmpeg-python==0.2.0
 future==1.0.0
+llist==0.7.1
+natsort==8.4.0
 numpy==2.3.1
 opencv-python==4.11.0.86
+opencv-stubs==0.0.12
 pytube==15.0.0
 pytubefix==9.2.1
 youtube-dl==2021.12.17

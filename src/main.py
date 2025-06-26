@@ -1,10 +1,12 @@
 import youtube_downloader
 import frame_split
+import remove_duplicates
 
 if __name__ == "__main__":
     youtube_vid = youtube_downloader.download_video(
-        "http://youtube.com/watch?v=2lAe1cqCOXo"
+        "https://youtu.be/eMR-YWq21b0?si=ICWOIGTARaG8hL3q"
     )
     print(youtube_vid)
     print("after downloading")
-    frame_split.split_video_into_frames(youtube_vid, fps=30)
+    frames = frame_split.split_video_into_frames(youtube_vid, fps=1)
+    remove_duplicates.remove_duplicates(frames, threshold=0.2)
