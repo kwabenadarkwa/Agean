@@ -9,4 +9,5 @@ if __name__ == "__main__":
     print(youtube_vid)
     print("after downloading")
     frames = frame_split.split_video_into_frames(youtube_vid, fps=1)
-    remove_duplicates.remove_duplicates(frames, threshold=0.2)
+    #no optimization version of the application
+    # remove_duplicates.remove_duplicates(frames, threshold=0.2)
