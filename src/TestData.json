@@ -1,5 +1,5 @@
 {
-  "Level 1": [
+  "level_1": [
     {
       "link": "https://youtu.be/fWjsdhR3z3c?si=oF5leDlVBntajWkJ",
       "ide": "Pycharm",
@@ -60,9 +60,8 @@
       "theme": "Dark",
       "duration": "2:45"
     }
-    }
   ],
-  "Level 2": [
+  "level_2": [
     {
       "link": "https://youtu.be/JQZmzrCSKSY?si=IQrKzVmMUf1IKK-G",
       "ide": "Pycharm",
@@ -86,9 +85,9 @@
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "4:05"
-    },
+    }
   ],
-  "Level 3": [
+  "level_3": [
     {
       "link": "https://youtu.be/JH4q65dZPvY?si=uWGCEmTTcCIi8X6_",
       "ide": "Pycharm",
@@ -101,13 +100,13 @@
       "theme": "Dark",
       "duration": "12:03"
     },
-    {   
+    {
       "link": "https://youtu.be/E9tl3hP03lk?si=TfeLuhUvspyrzkG_",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "10:36"
     },
-    {   
+    {
       "link": "https://youtu.be/AMTZG5W3rKQ?si=2S9g9SeVPBDfpZF9",
       "ide": "Pycharm",
       "theme": "Dark",
@@ -137,7 +136,7 @@
       "theme": "Dark",
       "duration": "11:20"
     },
-    { 
+    {
       "link": "https://youtu.be/Anw4F1jM3BU?si=mwvfpHeWINC75DSw",
       "ide": "Pycharm",
       "theme": "Dark",
@@ -154,10 +153,9 @@
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "6:36"
-    },
+    }
   ],
-
-  "Level 4": [
+  "level_4": [
     {
       "link": "https://youtu.be/EH-TFaX-R-o?si=RQ4QvIXmNWtLkcQG",
       "ide": "Pycharm",
