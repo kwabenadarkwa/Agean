@@ -1,1 +1,1 @@
-DownloadVideo|->SplitVideoIntoFrames|->RemoveDuplicates|->ExtractCodeFromFrames
+DownloadVideo|->SplitVideoIntoFrames|->ExtractCodeFromFrames

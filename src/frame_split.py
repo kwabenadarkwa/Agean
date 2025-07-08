@@ -5,7 +5,7 @@ from typing import Tuple
 import ffmpeg
 from event_pipeline.base import EventBase
 
-import youtube_downloader
+from DownloadVideo import DownloaderReturnType
 
 vidoes_path = "Videos"
 
@@ -20,7 +20,8 @@ class FrameSplitReturnType:
     def __str__(self):
         return f"Title: {self.DownloaderReturnType.title
         }\nVideo Link: {self.DownloaderReturnType.link
-        }\nTranscript: {self.DownloaderReturnType.transcript}"
+        }\nTranscript: {self.DownloaderReturnType.transcript
+        }\nFrames Path: {self.frames_path}"
 
 
 class SplitVideoIntoFrames(EventBase):
@@ -36,9 +37,7 @@ class SplitVideoIntoFrames(EventBase):
         Raises:
         """
 
-        previous_result: youtube_downloader.DownloaderReturnType = self.previous_result[
-            0
-        ].content
+        previous_result: DownloaderReturnType = self.previous_result[0].content
         create_folder_with_video_name(previous_result)
 
         ffmpeg.input(previous_result.filepath).filter(
@@ -55,10 +54,10 @@ class SplitVideoIntoFrames(EventBase):
 
 
 def create_folder_with_video_name(
-    video: youtube_downloader.DownloaderReturnType,
+    video: DownloaderReturnType,
 ) -> None:
     os.mkdir(pathlib.Path(vidoes_path, video.title))
 
 
-def remove_video(video: youtube_downloader.DownloaderReturnType) -> None:
+def remove_video(video: DownloaderReturnType) -> None:
     os.remove(video.filepath)
