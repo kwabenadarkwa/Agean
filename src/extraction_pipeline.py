@@ -1,7 +1,7 @@
 from event_pipeline.fields import InputDataField
 from event_pipeline.pipeline import Pipeline
 
-from DownloadVideo import DownloadVideo
+from download_video import DownloadVideo
 from extract_code import ExtractCodeFromFrames
 from frame_split import SplitVideoIntoFrames
 from remove_duplicates import RemoveDuplicates

@@ -20,6 +20,7 @@ class ExtractCodeFromFrames(EventBase):
             frame_num_and_content[frame_name[len("frame") : -len(".png")]] = (
                 extract_content(video, frame_name)
             )
+        print(frame_num_and_content)
         return True, frame_num_and_content
 
 

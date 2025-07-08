@@ -5,7 +5,7 @@ from typing import Tuple
 import ffmpeg
 from event_pipeline.base import EventBase
 
-from DownloadVideo import DownloaderReturnType
+from download_video import DownloaderReturnType
 
 vidoes_path = "Videos"
 
@@ -37,7 +37,7 @@ class SplitVideoIntoFrames(EventBase):
         Raises:
         """
 
-        previous_result: DownloaderReturnType = self.previous_result[0].content
+        previous_result: DownloaderReturnType = self.previous_result[0].content #type:ignore
         create_folder_with_video_name(previous_result)
 
         ffmpeg.input(previous_result.filepath).filter(
