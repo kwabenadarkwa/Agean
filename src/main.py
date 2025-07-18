@@ -2,17 +2,15 @@ from event_pipeline.telemetry import (PrometheusPublisher, get_failed_events,
                                       get_metrics, get_retry_stats,
                                       get_slow_events, monitor_events)
 
-from pipeline.extraction_pipeline import BatchExtractionPipeline, CodeExtractionPipeline
-from utils import load_youtube_data
+from pipeline.extraction_pipeline import BatchExtractionPipeline
+from utils import get_youtube_objects_based_on_level
 
 if __name__ == "__main__":
     # monitor_events()
-    links = []
-    data = load_youtube_data("TestData.json")
-    links = [youtube_object.link for youtube_object in data.level_1]
-
     batch = BatchExtractionPipeline(
-        youtube_object=links, frame_extraction_fps=1, duplicate_removal_threshold=0.8
+        youtube_object=get_youtube_objects_based_on_level(),
+        frame_extraction_fps=1,
+        duplicate_removal_threshold=0.8,
     )
     batch.execute()
     #

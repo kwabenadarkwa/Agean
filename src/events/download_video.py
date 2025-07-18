@@ -5,11 +5,12 @@ from event_pipeline.base import EventBase
 from pytubefix import YouTube
 
 from models import download_type
+from models.test_data import YoutubeObject
 
 
 class DownloadVideo(EventBase):
     def process(
-        self, youtube_object, *args, **kwargs
+        self, youtube_object:list[YoutubeObject], *args, **kwargs
     ) -> Tuple[bool, download_type.DownloaderReturnType]:
         """This function downloads a video from a link.
         Args:
@@ -22,8 +23,7 @@ class DownloadVideo(EventBase):
         # INFO: the paraamter that is passed inside of the batch pipeline is a list of strings
         # hence to access it we need to access the first element of the list
 
-        # print("this is the download link", youtube_object[0])
-        yt = YouTube(youtube_object[0])
+        yt = YouTube(youtube_object[0].link) 
         filepath = pathlib.Path("Videos", yt.title + ".mp4")
 
         if yt.captions.get("en"):
@@ -38,8 +38,8 @@ class DownloadVideo(EventBase):
 
         if yt is None:
             # TODO: find something better to return here
-            return False, download_type.DownloaderReturnType(None, None, None, None)
+            return False, download_type.DownloaderReturnType(None, None, None)
 
         return True, download_type.DownloaderReturnType(
-            yt.title, youtube_object, filepath, captions
+            yt.title, filepath, captions
         )

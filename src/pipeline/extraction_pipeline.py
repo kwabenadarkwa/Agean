@@ -5,10 +5,10 @@ from events.download_video import DownloadVideo
 from events.extract_code import ExtractCodeFromFrames
 from events.frame_split import SplitVideoIntoFrames
 from events.remove_duplicates import RemoveDuplicates
+from models.test_data import YoutubeObject
 
 
 class CodeExtractionPipeline(Pipeline):
-    # TODO: currently this is a string but it should be a YoutubeObject
     youtube_object = InputDataField(data_type=list, batch_size=1)
     frame_extraction_fps = InputDataField(data_type=int, required=True)
     duplicate_removal_threshold = InputDataField(data_type=float, required=True)

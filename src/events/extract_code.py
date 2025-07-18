@@ -5,7 +5,6 @@ import pytesseract
 from event_pipeline.base import EventBase
 from PIL import Image
 
-import frame_split
 from models import frame_split_type
 import utils
 
@@ -13,7 +12,7 @@ import utils
 class ExtractCodeFromFrames(EventBase):
     def process(self, *args, **kwargs) -> Tuple[bool, Dict[str, str]]:
         video: frame_split_type.FrameSplitReturnType = (
-            self.previous_result.first()  # type:ignore
+            self.previous_result.first().content  # type:ignore
         )  
         frame_names = utils.load_frame_names(video)
         # FIX: might be useful to remove the frames that don't contain code
