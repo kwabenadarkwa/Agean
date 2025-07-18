@@ -38,7 +38,7 @@ class RemoveDuplicates(EventBase):
             ValueError: If the SIFT descriptors cannot be computed for one or both frames.
         """
         sift = cv.SIFT_create()
-        video_frames: frame_split.FrameSplitReturnType = self.previous_result[0].content
+        video_frames: frame_split.FrameSplitReturnType = self.previous_result[0]
         frame_names = load_frame_names(video_frames)
         # print(frame_names)
 

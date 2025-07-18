@@ -13,6 +13,12 @@ vidoes_path = "Videos"
 class FrameSplitReturnType:
     """This class represents the return type of the `split_video_into_frames` function."""
 
+    def __setstate__(self,state):
+        self.__dict__.update(state)
+
+    def __getstate__(self):
+        return self.__dict__
+
     def __init__(self, DownloaderReturnType, frames_path):
         self.DownloaderReturnType = DownloaderReturnType
         self.frames_path = frames_path
@@ -37,7 +43,9 @@ class SplitVideoIntoFrames(EventBase):
         Raises:
         """
 
-        previous_result: DownloaderReturnType = self.previous_result[0].content #type:ignore
+        previous_result: DownloaderReturnType = self.previous_result.first().content #type:ignore
+        print(  "THIS IS THE PREVIOUS RESULT", previous_result)
+        print(  "THIS IS THE PREVIOUS RESULT TYPE", type(previous_result))
         create_folder_with_video_name(previous_result)
 
         ffmpeg.input(previous_result.filepath).filter(

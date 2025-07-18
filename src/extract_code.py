@@ -11,7 +11,7 @@ import remove_duplicates
 
 class ExtractCodeFromFrames(EventBase):
     def process(self, *args, **kwargs) -> Tuple[bool, Dict[str, str]]:
-        video: frame_split.FrameSplitReturnType = self.previous_result[0].content  # type: ignore
+        video: frame_split.FrameSplitReturnType = self.previous_result.first()#type:ignore
         frame_names = remove_duplicates.load_frame_names(video)
         # FIX: might be useful to remove the frames that don't contain code
         frame_num_and_content: Dict[str, str] = {}
