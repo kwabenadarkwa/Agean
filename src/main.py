@@ -2,8 +2,8 @@ from event_pipeline.telemetry import (PrometheusPublisher, get_failed_events,
                                       get_metrics, get_retry_stats,
                                       get_slow_events, monitor_events)
 
-from extraction_pipeline import BatchExtractionPipeline, CodeExtractionPipeline
-from load_youtube_data import load_youtube_data
+from pipeline.extraction_pipeline import BatchExtractionPipeline, CodeExtractionPipeline
+from utils import load_youtube_data
 
 if __name__ == "__main__":
     # monitor_events()

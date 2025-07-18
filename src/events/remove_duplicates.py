@@ -1,14 +1,12 @@
 import pathlib
-from os import walk
 from typing import Tuple
 
 import cv2 as cv
-import numpy as np
 from event_pipeline.base import EventBase
 from llist import sllist as linkedlist
-from natsort import natsorted
 
-import frame_split
+from models import frame_split_type
+import utils
 
 FLANN_INDEX_KDTREE = 1
 index_params = dict(algorithm=FLANN_INDEX_KDTREE, trees=5)
@@ -38,8 +36,10 @@ class RemoveDuplicates(EventBase):
             ValueError: If the SIFT descriptors cannot be computed for one or both frames.
         """
         sift = cv.SIFT_create()
-        video_frames: frame_split.FrameSplitReturnType = self.previous_result[0]
-        frame_names = load_frame_names(video_frames)
+        video_frames: frame_split_type.FrameSplitReturnType = (
+            self.previous_result.first().content  # type:ignore
+        )
+        frame_names = utils.load_frame_names(video_frames)
         # print(frame_names)
 
         reference = frame_names.first
@@ -99,26 +99,6 @@ class RemoveDuplicates(EventBase):
         print("Done removing duplicates")
         print(frame_names)
         return frame_names
-
-
-def load_frame_names(video_frames: frame_split.FrameSplitReturnType) -> linkedlist:
-    """This function loads the frame names from the video frames.
-    Args:
-        video_frames (frame_split.FrameSplitReturnType): The video frames to load the frame
-        names from.
-
-    Returns:
-        linkedlist: The linked list of frame names.
-
-    Raises:
-    """
-
-    frame_names = []
-    for _, _, filenames in walk(video_frames.frames_path):
-        frame_names.extend(filenames)
-        break
-    frame_names = natsorted(frame_names)
-    return linkedlist(frame_names)
 
 
 if __name__ == "__main__":

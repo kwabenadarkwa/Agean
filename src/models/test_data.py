@@ -1,6 +1,6 @@
-import json
-
 from pydantic import BaseModel
+
+from models import download_type, frame_split_type
 
 
 class YoutubeObject(BaseModel):
@@ -17,12 +17,3 @@ class TestData(BaseModel):
     level_4: list[YoutubeObject]
 
 
-def load_youtube_data(file_name: str) -> TestData:
-    with open(file_name, "r") as f:
-        data = json.load(f)
-        return TestData(**data)
-
-
-if __name__ == "__main__":
-    data = load_youtube_data("TestData.json")
-    print(data.level_1)

@@ -4,32 +4,13 @@ from typing import Tuple
 from event_pipeline.base import EventBase
 from pytubefix import YouTube
 
-
-class DownloaderReturnType:
-    """This class represents the return type of the `download_video` function."""
-
-    def __setstate__(self, state):
-        self.__dict__.update(state)
-
-    def __getstate__(self):
-        return self.__dict__
-
-    def __init__(self, title, link, filepath, transcript):
-        self.title = title
-        self.link = link
-        self.filepath = filepath
-        self.transcript = transcript
-
-    def __str__(self):
-        return f"Title: {self.title
-        }\nVideo Link: {self.link
-        }\nTranscript: {self.transcript}"
+from models import download_type
 
 
 class DownloadVideo(EventBase):
     def process(
         self, youtube_object, *args, **kwargs
-    ) -> Tuple[bool, DownloaderReturnType]:
+    ) -> Tuple[bool, download_type.DownloaderReturnType]:
         """This function downloads a video from a link.
         Args:
             link (str): The link to the video.
@@ -38,9 +19,8 @@ class DownloadVideo(EventBase):
         Raises:
         """
         self.stop_on_error = True
-        #INFO: the paraamter that is passed inside of the batch pipeline is a list of strings
+        # INFO: the paraamter that is passed inside of the batch pipeline is a list of strings
         # hence to access it we need to access the first element of the list
-
 
         # print("this is the download link", youtube_object[0])
         yt = YouTube(youtube_object[0])
@@ -58,6 +38,8 @@ class DownloadVideo(EventBase):
 
         if yt is None:
             # TODO: find something better to return here
-            return False, DownloaderReturnType(None, None, None, None)
+            return False, download_type.DownloaderReturnType(None, None, None, None)
 
-        return True, DownloaderReturnType(yt.title, youtube_object, filepath, captions)
+        return True, download_type.DownloaderReturnType(
+            yt.title, youtube_object, filepath, captions
+        )

@@ -1,12 +1,10 @@
 from event_pipeline.fields import InputDataField
 from event_pipeline.pipeline import BatchPipeline, Pipeline
 
-from download_video import DownloadVideo
-from extract_code import ExtractCodeFromFrames
-from frame_split import SplitVideoIntoFrames
-from load_youtube_data import YoutubeObject
-from remove_duplicates import RemoveDuplicates
-
+from events.download_video import DownloadVideo
+from events.extract_code import ExtractCodeFromFrames
+from events.frame_split import SplitVideoIntoFrames
+from events.remove_duplicates import RemoveDuplicates
 
 
 class CodeExtractionPipeline(Pipeline):
