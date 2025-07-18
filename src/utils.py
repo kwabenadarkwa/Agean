@@ -12,6 +12,8 @@ from models import download_type, frame_split_type, test_data
 from models.test_data import YoutubeObject
 
 
+def get_test_videos_level()->int:
+    return args.level
 def get_youtube_objects_based_on_level() -> list[YoutubeObject]:
     data = load_youtube_data(args.load_file)
 
