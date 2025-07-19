@@ -8,6 +8,7 @@ parser.add_argument(
     default=1,
     help="Level of the type of videos the pipeline should process",
 )
+
 parser.add_argument(
     "-t",
     "--test-file",

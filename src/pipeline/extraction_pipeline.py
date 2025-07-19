@@ -5,6 +5,7 @@ from events.download_video import DownloadVideo
 from events.extract_code import ExtractCodeFromFrames
 from events.frame_split import SplitVideoIntoFrames
 from events.remove_duplicates import RemoveDuplicates
+from events.llm_parsing import LLMParse
 from models.test_data import YoutubeObject
 
 
@@ -17,4 +18,5 @@ class CodeExtractionPipeline(Pipeline):
 
 class BatchExtractionPipeline(BatchPipeline):
     pipeline_template = CodeExtractionPipeline
+    #TODO: there is something wrong with the task_completed signal in terms of the batch pipeline
     listen_to_signals = ["task_completed", "task_failed"]

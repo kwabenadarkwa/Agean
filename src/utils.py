@@ -9,16 +9,16 @@ from llist import sllist as linkedlist
 from natsort import natsorted
 
 from models import download_type, frame_split_type, test_data
-from models.test_data import YoutubeObject
 from models.prompt_data import PromptData
+from models.test_data import YoutubeObject
 
 
-def get_test_videos_level()->int:
+def get_test_videos_level() -> int:
     return args.level
 
 
 def get_youtube_objects_based_on_level() -> list[YoutubeObject]:
-    data = load_youtube_data(args.load_file)
+    data = load_youtube_data()
 
     match args.level:
         case 1:
@@ -33,16 +33,18 @@ def get_youtube_objects_based_on_level() -> list[YoutubeObject]:
             return [youtube_object for youtube_object in data.level_1]
 
 
-def load_youtube_data(file_name: str) -> test_data.TestData:
-    with open(file_name, "r") as f:
+def load_youtube_data() -> test_data.TestData:
+    with open(args.test_file, "r") as f:
         data = json.load(f)
         return test_data.TestData(**data)
 
 
+# TODO: this could possible be abstracted into a better function
 def load_prompt_data() -> PromptData:
     with open(args.prompt_file, "r") as f:
         data = json.load(f)
         return PromptData(**data)
+
 
 def load_frame_names(video_frames: frame_split_type.FrameSplitReturnType) -> linkedlist:
     """This function loads the frame names from the video frames.
@@ -78,11 +80,5 @@ def remove_file(
             video, frame_split_type.FrameSplitReturnType
         ) and os.path.exists(video.frames_path):
             shutil.rmtree(video.frames_path)
-
     except OSError as e:
         print("Error Removing file: %s - %s." % (e.filename, e.strerror))
-
-
-if __name__ == "__main__":
-    data = load_youtube_data("TestData.json")
-    print(data.level_1)
