@@ -13,6 +13,7 @@ load_dotenv()
 class LLMParse(EventBase):
     def process(self, *args, **kwargs) -> Tuple[bool, Dict[str, str]]:
         address = f"http://{os.getenv("SERVER_IP")}/api/generate"
+        prompt = 
         response = requests.post(
             url=address,
             headers={"Content-Type": "application/json"},
@@ -22,3 +23,4 @@ class LLMParse(EventBase):
 
 
 if __name__ == "__main__":
+    pass

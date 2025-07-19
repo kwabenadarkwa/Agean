@@ -10,10 +10,13 @@ from natsort import natsorted
 
 from models import download_type, frame_split_type, test_data
 from models.test_data import YoutubeObject
+from models.prompt_data import PromptData
 
 
 def get_test_videos_level()->int:
     return args.level
+
+
 def get_youtube_objects_based_on_level() -> list[YoutubeObject]:
     data = load_youtube_data(args.load_file)
 
@@ -35,6 +38,11 @@ def load_youtube_data(file_name: str) -> test_data.TestData:
         data = json.load(f)
         return test_data.TestData(**data)
 
+
+def load_prompt_data() -> PromptData:
+    with open(args.prompt_file, "r") as f:
+        data = json.load(f)
+        return PromptData(**data)
 
 def load_frame_names(video_frames: frame_split_type.FrameSplitReturnType) -> linkedlist:
     """This function loads the frame names from the video frames.
