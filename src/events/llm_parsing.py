@@ -3,7 +3,6 @@ import os
 from parser.flags_parser import args as level_args
 from typing import Dict, Tuple, Union
 
-import requests
 from dotenv import load_dotenv
 from event_pipeline.base import EventBase
 from openai import OpenAI
@@ -32,8 +31,17 @@ class LLMParse(EventBase):
         response = client.chat.completions.create(
             model="deepseek-chat",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant"},
-                {"role": "user", "content": "Hello, what is your name?"},
+                {"role": "system", "content": f"{prompt_data.your_role}"},
+                {
+                    "role": "user",
+                    "content": f"App Description: \n{prompt_data.app_description}\
+                            \nInput Description: \n{prompt_data.input_description}\
+                            \nOutput Description: \n{prompt_data.output_description}\
+                            \nLevel Preamble: \n{prompt_data.level_preamble}\
+                            \nLevel Info: \n{level_info}\
+                            \nInput: \n{input_data}\
+                    ",
+                },
             ],
             temperature=0.0,
             stream=False,
@@ -41,28 +49,9 @@ class LLMParse(EventBase):
 
         print(response.choices[0].message.content)
 
-        # prompt = {
-        #     "model": "deepseek-r1:7b",
-        #     # "prompt": f"{prompt_data.app_description}\n"
-        #     # f"Your role:\n{prompt_data.your_role}\n"
-        #     # f"Input description:\n{prompt_data.input_description}\n"
-        #     # f"Output description:\n{prompt_data.output_description}\n"
-        #     # f"Level preamble:\n{prompt_data.level_preamble}\n"
-        #     # f"Level info:\n{level_info}\n"
-        #     # f"Input:\n{input_data}",
-        #     "prompt": "you are a boy can you tell me how to program in python",
-        # }
-        # response = requests.post(
-        #     url=address,
-        #     headers={"Content-Type": "application/json"},
-        #     data=json.dumps(prompt),
-        # )
+        with open("response.txt", "a") as f:
+            f.write(str(response.choices[0].message.content))
 
-        # print(dict(response.json()))
-        # write the response to a file
-        # with open("response.txt", "w") as f:
-        #     f.write(response.text)
-        # the reponse might be an issue at this point
         return True, response.choices[0].message.content
 
     def get_level_data(self) -> str:
