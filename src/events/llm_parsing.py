@@ -9,6 +9,7 @@ from event_pipeline.base import EventBase
 
 from models.prompt_data import PromptData
 from utils import load_prompt_data
+from openai import OpenAI
 
 load_dotenv()
 prompt_data: PromptData = load_prompt_data()
@@ -17,7 +18,8 @@ prompt_data: PromptData = load_prompt_data()
 # TODO: think about giving the AI some examples that it could use to give me a good response
 # TODO: add information about the video in question
 class LLMParse(EventBase):
-    def process(self, *args, **kwargs) -> Tuple[bool, Dict[str, str]]:
+    def process(self, *args, **kwargs) -> Tuple[bool, str]:
+        # add to the batch pipeline portion of things
         address = f"http://{os.getenv("SERVER_IP")}/api/generate"
 
         level_info = self.get_level_data()
@@ -25,15 +27,14 @@ class LLMParse(EventBase):
 
         prompt = {
             "model": "deepseek-r1:7b",
-            "prompt": prompt_data.app_description
-            + "\n"
-            + "Your role:\n"
-            + prompt_data.your_role
-            + "\n"
-            "Input description:\n" + prompt_data.input_description + "\n"
-            "Output description:\n" + prompt_data.output_description + "\n"
-            "Level preamble:\n" + prompt_data.level_preamble + "\n"
-            "Level info:\n" + level_info + "\n" + "Input:\n" + input_data,
+            # "prompt": f"{prompt_data.app_description}\n"
+            # f"Your role:\n{prompt_data.your_role}\n"
+            # f"Input description:\n{prompt_data.input_description}\n"
+            # f"Output description:\n{prompt_data.output_description}\n"
+            # f"Level preamble:\n{prompt_data.level_preamble}\n"
+            # f"Level info:\n{level_info}\n"
+            # f"Input:\n{input_data}",
+            "prompt": "you are a boy can you tell me how to program in python",
         }
         response = requests.post(
             url=address,
@@ -42,8 +43,11 @@ class LLMParse(EventBase):
         )
 
         print(dict(response.json()))
+        # write the response to a file
+        with open("response.txt", "w") as f:
+            f.write(response.text)
         # the reponse might be an issue at this point
-        return True, dict(response.json())
+        return True, response.text
 
     def get_level_data(self) -> str:
         match level_args.level:
