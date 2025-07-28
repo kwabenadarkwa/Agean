@@ -26,6 +26,7 @@ class DownloadVideo(EventBase):
         yt = YouTube(youtube_object[0].link) 
         filepath = pathlib.Path("videos", yt.title + ".mp4")
 
+        #TODO: don't forget that the captions might be necesary to the LLM to increse the accuracy of it's results
         if yt.captions.get("en"):
             captions = yt.captions["en"].generate_srt_captions()
         elif yt.captions.get("a.en"):
