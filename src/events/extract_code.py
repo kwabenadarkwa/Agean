@@ -7,8 +7,10 @@ from PIL import Image
 
 from models import frame_split_type
 import utils
+import json
 
 
+#TODO: use the google vision api to extract the text from the frames
 class ExtractCodeFromFrames(EventBase):
     def process(self, *args, **kwargs) -> Tuple[bool, Dict[str, str]]:
         video: frame_split_type.FrameSplitReturnType = (
@@ -22,7 +24,7 @@ class ExtractCodeFromFrames(EventBase):
             frame_num_and_content[frame_name[len("frame") : -len(".png")]] = (
                 extract_content(video, frame_name)
             )
-        print(frame_num_and_content)
+        print(json.dumps(frame_num_and_content))
         utils.remove_file(video)
         return True, frame_num_and_content
 

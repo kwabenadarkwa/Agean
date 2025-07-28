@@ -24,7 +24,7 @@ class DownloadVideo(EventBase):
         # hence to access it we need to access the first element of the list
 
         yt = YouTube(youtube_object[0].link) 
-        filepath = pathlib.Path("Videos", yt.title + ".mp4")
+        filepath = pathlib.Path("videos", yt.title + ".mp4")
 
         if yt.captions.get("en"):
             captions = yt.captions["en"].generate_srt_captions()
@@ -34,7 +34,7 @@ class DownloadVideo(EventBase):
             captions = None
 
         ys = yt.streams.get_highest_resolution()
-        ys.download(output_path="Videos")  # type: ignore
+        ys.download(output_path="videos")  # type: ignore
 
         if yt is None:
             # TODO: find something better to return here

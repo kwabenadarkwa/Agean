@@ -18,6 +18,12 @@ def get_test_videos_level() -> int:
 
 
 def get_youtube_objects_based_on_level() -> list[YoutubeObject]:
+    """This function returns a list of YoutubeObjects based on the level of the test.
+    Args:
+
+    Returns:
+        list[YoutubeObject]: The list of YoutubeObjects based on the level of the test.
+    """
     data = load_youtube_data()
 
     match args.level:

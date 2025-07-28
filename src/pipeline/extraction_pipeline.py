@@ -7,6 +7,9 @@ from events.frame_split import SplitVideoIntoFrames
 from events.remove_duplicates import RemoveDuplicates
 from events.llm_parsing import LLMParse
 from models.test_data import YoutubeObject
+from events.dummy_event import DummyEvent
+from events.dummy_event_two import DummyEventTwo
+from events.frame_split import DevelopingSplitVideoIntoFrames
 
 
 class CodeExtractionPipeline(Pipeline):
@@ -16,7 +19,5 @@ class CodeExtractionPipeline(Pipeline):
     level = InputDataField(data_type=int, required=True)
 
 
-class BatchExtractionPipeline(BatchPipeline):
+class TestExtractionPipeline(BatchPipeline):
     pipeline_template = CodeExtractionPipeline
-    #TODO: there is something wrong with the task_completed signal in terms of the batch pipeline
-    # listen_to_signals = ["task_completed", "task_failed"]

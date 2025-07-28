@@ -13,7 +13,7 @@ parser.add_argument(
     "-t",
     "--test-file",
     type=str,
-    default="TestData.json",
+    default="testData.json",
     help="Select file to load data from",
 )
 
@@ -21,7 +21,7 @@ parser.add_argument(
     "-p",
     "--prompt-file",
     type=str,
-    default="Prompts.json",
+    default="prompts.json",
     help="This file contains the prompts that will be used to generate the AI's response",
 )
 
