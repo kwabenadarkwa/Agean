@@ -2,86 +2,65 @@
   "level_1": [
     {
       "link": "https://youtu.be/fWjsdhR3z3c?si=oF5leDlVBntajWkJ",
+      "title": "Learn Python in Less than 10 Minutes for Beginners (Fast & Easy)",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "10:30"
     },
     {
-      "link": "https://youtu.be/Ro_MScTDfU4?si=jPKGe-Q9rzGrOtLf",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "30:41"
-    },
-    {
       "link": "https://youtu.be/I72uD8ED73U?si=FS2BK_iZ1igdXO7L",
+      "title": "5 Good Python Habits",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "17:35"
     },
     {
       "link": "https://youtu.be/Gx5qb1uHss4?si=z7yB2t1QfrQU2rrI",
+      "title": "10 Important Python Concepts In 20 Minutes",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "18:48"
     },
     {
       "link": "https://youtu.be/ankki-yKgSc?si=-zvxHmMI_9k3A-ha",
+      "title": "10 Nooby Mistakes Devs Often Make In Python.json",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "24:30"
     },
     {
-      "link": "https://youtu.be/-RgtgHvdYP4?si=HLu3TZHEBHPwkQh2",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "18:16"
-    },
-    {
-      "link": "https://youtu.be/n9w2U7ImsKI?si=Jjdw3ANr4B5Hysg9",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "11:36"
-    },
-    {
-      "link": "https://youtu.be/Y9fT4HVdCuQ?si=3NzeXZzdgKwPtL4X",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "11:24"
-    },
-    {
       "link": "https://youtu.be/92JdbyISpCo?si=P8SO7odwqSYAEt6K",
+      "title": "Is \"finally\" Useless In Python?.json",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "7:01"
-    },
-    {
-      "link": "https://youtu.be/y8UUl-81_u0?si=p-ekr-8TrXLcOoWA",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "2:45"
     }
   ],
   "level_2": [
     {
       "link": "https://youtu.be/JQZmzrCSKSY?si=IQrKzVmMUf1IKK-G",
+      "title": "@staticmethod explained in Python.json",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "4:54"
     },
     {
       "link": "https://youtu.be/7fSHTqM8gHs?si=WLLn6iaAKdueewy-",
+      "title": "5 Tips To Write Better Python Functions.json",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "15:58"
     },
     {
       "link": "https://youtu.be/sHCRglj6qtA?si=MEZFvTCmCBcYP1nq",
+      "title": "What exactly is 'yield from' in Python? [Easy explanation].json",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "8:12"
     },
     {
       "link": "https://youtu.be/2Mz85k6ZczY?si=LVMM3gB0nSJbEFLV",
+      "title": "New In Python 3.12: @override.json",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "4:05"
@@ -90,66 +69,35 @@
   "level_3": [
     {
       "link": "https://youtu.be/JH4q65dZPvY?si=uWGCEmTTcCIi8X6_",
+      "title": "What exactly is 'self' in Python? [Easy explanation]",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "6:26"
     },
     {
-      "link": "https://youtu.be/TAMbq0iRUsA?si=cBZEr0hahxsmRzf_",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "12:03"
-    },
-    {
-      "link": "https://youtu.be/E9tl3hP03lk?si=TfeLuhUvspyrzkG_",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "10:36"
-    },
-    {
       "link": "https://youtu.be/AMTZG5W3rKQ?si=2S9g9SeVPBDfpZF9",
+      "title": "StrEnum & IntEnum: New Enum Types In Python?",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "8:07"
     },
     {
-      "link": "https://youtu.be/mSoEjBpJUJ0?si=aUzIIFBjfY0GIKJk",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "14:17"
-    },
-    {
       "link": "https://youtu.be/ChvFoys_BWU?si=L6g1vQcuKb8XETJt",
+      "title": "5 Weird Python Features",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "1:33"
     },
     {
-      "link": "https://youtu.be/sQ1Q96-Vhjk?si=Eo4pgsUuEZ9smYSp",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "15:09"
-    },
-    {
-      "link": "https://youtu.be/W6b6J1svbj8?si=NltgNpT6ONSgFVu9",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "11:20"
-    },
-    {
       "link": "https://youtu.be/Anw4F1jM3BU?si=mwvfpHeWINC75DSw",
+      "title": "\"__new__ VS __init__\" In Python Tutorial (Simplified Explantion)",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "8:57"
     },
     {
-      "link": "https://youtu.be/qqp6QN20CpE?si=d8lhto_WxncCXrrX",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "25:10"
-    },
-    {
       "link": "https://youtu.be/1I3fuDR2S9A?si=M9rQWjKI2FDCu00a",
+      "title": "How To Use Dunder Methods In Python Tutorial (Magic Methods)",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "6:36"
@@ -158,18 +106,21 @@
   "level_4": [
     {
       "link": "https://youtu.be/EH-TFaX-R-o?si=RQ4QvIXmNWtLkcQG",
+      "title": "What does '__init__.py' do in Python?",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "6:49"
     },
     {
       "link": "https://youtu.be/O70FuH2LhNg?si=fPBTWB3LAyMmWBo2",
+      "title": "How To Create An Image Captcha Generator In Python Tutorial",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "7:33"
     },
     {
       "link": "https://youtu.be/3_P-dxrNCq8?si=dMhud1FdvznDVt-Z",
+      "title": "5 Useful Python Decorators (ft. Carberra)",
       "ide": "Pycharm",
       "theme": "Dark",
       "duration": "14:33"
