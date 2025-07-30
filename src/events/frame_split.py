@@ -9,6 +9,7 @@ import utils
 from models import download_type, frame_split_type
 
 videos_path = "videos"
+testing_videos_path = "testExtractedFrames"
 
 
 class SplitVideoIntoFrames(EventBase):
@@ -66,7 +67,7 @@ class DevelopingSplitVideoIntoFrames(EventBase):
             "fps", fps=frame_extraction_fps
         ).output(
             filename=pathlib.Path(
-                videos_path,
+                testing_videos_path,
                 f"Level{str(level)}",
                 video_downloaded.title,
                 "frame%d.jpg",
@@ -76,7 +77,7 @@ class DevelopingSplitVideoIntoFrames(EventBase):
 
         utils.remove_file(video_downloaded)
         return True, frame_split_type.FrameSplitReturnType(
-            video_downloaded, pathlib.Path(videos_path, video_downloaded.title)
+            video_downloaded, pathlib.Path(testing_videos_path, video_downloaded.title)
         )
 
 
@@ -90,4 +91,4 @@ def create_folder_with_video_name_and_level(
     level: int,
     video: download_type.DownloaderReturnType,
 ) -> None:
-    os.mkdir(pathlib.Path(videos_path, f"Level{str(level)}", video.title))
+    os.mkdir(pathlib.Path(testing_videos_path, f"Level{str(level)}", video.title))

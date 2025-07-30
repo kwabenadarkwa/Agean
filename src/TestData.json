@@ -1,6 +1,21 @@
 {
   "level_1": [
     {
+      "link": "https://youtu.be/92JdbyISpCo?si=P8SO7odwqSYAEt6K",
+      "title": "Is \"finally\" Useless In Python?.json",
+      "ide": "Pycharm",
+      "theme": "Dark",
+      "duration": "7:01"
+    },
+    {
+      "link": "https://youtu.be/y8UUl-81_u0?si=p-ekr-8TrXLcOoWA",
+      "title": "New In Python 3.12: Type Statement",
+      "ide": "Pycharm",
+      "theme": "Dark",
+      "duration": "2:45"
+    },
+
+    {
       "link": "https://youtu.be/fWjsdhR3z3c?si=oF5leDlVBntajWkJ",
       "title": "Learn Python in Less than 10 Minutes for Beginners (Fast & Easy)",
       "ide": "Pycharm",
@@ -8,32 +23,11 @@
       "duration": "10:30"
     },
     {
-      "link": "https://youtu.be/I72uD8ED73U?si=FS2BK_iZ1igdXO7L",
-      "title": "5 Good Python Habits",
+      "link": "https://youtu.be/Y9fT4HVdCuQ?si=3NzeXZzdgKwPtL4X",
+      "title": "Python: A Quick Guide To Type Annotations (ft. Mypy)",
       "ide": "Pycharm",
       "theme": "Dark",
-      "duration": "17:35"
-    },
-    {
-      "link": "https://youtu.be/Gx5qb1uHss4?si=z7yB2t1QfrQU2rrI",
-      "title": "10 Important Python Concepts In 20 Minutes",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "18:48"
-    },
-    {
-      "link": "https://youtu.be/ankki-yKgSc?si=-zvxHmMI_9k3A-ha",
-      "title": "10 Nooby Mistakes Devs Often Make In Python.json",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "24:30"
-    },
-    {
-      "link": "https://youtu.be/92JdbyISpCo?si=P8SO7odwqSYAEt6K",
-      "title": "Is \"finally\" Useless In Python?.json",
-      "ide": "Pycharm",
-      "theme": "Dark",
-      "duration": "7:01"
+      "duration": "11:24"
     }
   ],
   "level_2": [
