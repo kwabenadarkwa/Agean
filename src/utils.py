@@ -4,6 +4,7 @@ import shutil
 from os import walk
 from parser.flags_parser import args
 from typing import Union
+import pathlib
 
 from llist import sllist as linkedlist
 from natsort import natsorted
@@ -72,19 +73,28 @@ def load_frame_names(video_frames: frame_split_type.FrameSplitReturnType) -> lin
     return linkedlist(frame_names)
 
 
-def remove_file(
-    video: Union[
-        download_type.DownloaderReturnType, frame_split_type.FrameSplitReturnType
+def remove_all_old_frames(path_to_frames,paths:linkedlist) -> None: 
+    print("removing all old frames") 
+    path = paths.first 
+    while path is not None: 
+        remove_thing_based_on_type(str(pathlib.Path(path_to_frames,path.value))) 
+        path = path.next 
+
+def remove_thing_based_on_type(
+    remove_item: Union[
+        download_type.DownloaderReturnType, frame_split_type.FrameSplitReturnType, str
     ],
 ) -> None:
     try:
-        if isinstance(video, download_type.DownloaderReturnType) and os.path.exists(
-            video.filepath
-        ):
-            os.remove(video.filepath)
+        if isinstance(
+            remove_item, download_type.DownloaderReturnType
+        ) and os.path.exists(remove_item.filepath):
+            os.remove(remove_item.filepath)
+        elif isinstance(remove_item, str):
+            os.remove(remove_item)
         elif isinstance(
-            video, frame_split_type.FrameSplitReturnType
-        ) and os.path.exists(video.frames_path):
-            shutil.rmtree(video.frames_path)
+            remove_item, frame_split_type.FrameSplitReturnType
+        ) and os.path.exists(remove_item.frames_path):
+            shutil.rmtree(remove_item.frames_path)
     except OSError as e:
         print("Error Removing file: %s - %s." % (e.filename, e.strerror))

@@ -3,7 +3,7 @@
 
 # INFO: this is the pipeline with the bounding box without the removal of duplicate frames and without removal of non-code frames 
 #DownloadVideo|->SplitVideoIntoFrames|->DetectBoundingBox|->CropFrames|->ExtractCodeFromFrames|->LLMParse 
-DownloadVideo|->SplitVideoIntoFrames|->DetectBoundingBox
+DownloadVideo|->SplitVideoIntoFrames|->DetectBoundingBox|->CropFrames
 
 
 

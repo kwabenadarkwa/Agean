@@ -12,7 +12,7 @@ from models import frame_split_type
 
 # TODO: use the google vision api to extract the text from the frames
 class ExtractCodeFromFrames(EventBase):
-    def process(self, *args, **kwargs) -> Tuple[bool, Dict[str, str]]:
+    def process(self) -> Tuple[bool, Dict[str, str]]:
         video: frame_split_type.FrameSplitReturnType = (
             self.previous_result.first().content  # type:ignore
         )
@@ -25,12 +25,12 @@ class ExtractCodeFromFrames(EventBase):
                 extract_content(video, frame_name)
             )
         print(json.dumps(frame_num_and_content))
-        utils.remove_file(video)
+        utils.remove_thing_based_on_type(video)
         return True, frame_num_and_content
 
 
 class TestExtractCodeFromFrames(EventBase):
-    def process(self, *args, **kwargs) -> Tuple[bool, Dict[str, str]]:
+    def process(self) -> Tuple[bool, Dict[str, str]]:
         level = utils.get_test_videos_level()
         video: frame_split_type.FrameSplitReturnType = (
             self.previous_result.first().content  # type:ignore

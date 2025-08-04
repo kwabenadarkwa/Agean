@@ -155,6 +155,8 @@ src/videos/*
 response.txt
 src/events/dummy_event.py
 src/events/dummy_event_two.py
+AGENTS.md
+src/AGENTS.md 
 
 # Cython debug symbols
 cython_debug/

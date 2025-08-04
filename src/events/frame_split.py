@@ -14,7 +14,7 @@ testing_videos_path = "testExtractedFrames"
 
 class SplitVideoIntoFrames(EventBase):
     def process(
-        self, frame_extraction_fps, *args, **kwargs
+        self, frame_extraction_fps
     ) -> Tuple[bool, frame_split_type.FrameSplitReturnType]:
         """This function splits a video into frames.
         Args:
@@ -37,7 +37,7 @@ class SplitVideoIntoFrames(EventBase):
             start_number=1,
         ).overwrite_output().run()
 
-        utils.remove_file(video_downloaded)
+        utils.remove_thing_based_on_type(video_downloaded)
         return True, frame_split_type.FrameSplitReturnType(
             video_downloaded, pathlib.Path(videos_path, video_downloaded.title)
         )
@@ -45,7 +45,7 @@ class SplitVideoIntoFrames(EventBase):
 
 class DevelopingSplitVideoIntoFrames(EventBase):
     def process(
-        self, frame_extraction_fps, *args, **kwargs
+        self, frame_extraction_fps
     ) -> Tuple[bool, frame_split_type.FrameSplitReturnType]:
         """This function splits a video into frames. This is the development version that is being used to find out which
         method is the best for splitting the video into frames and things that come later in the pipeline.
@@ -75,7 +75,7 @@ class DevelopingSplitVideoIntoFrames(EventBase):
             start_number=1,
         ).overwrite_output().run()
 
-        utils.remove_file(video_downloaded)
+        utils.remove_thing_based_on_type(video_downloaded)
         return True, frame_split_type.FrameSplitReturnType(
             video_downloaded, pathlib.Path(testing_videos_path, video_downloaded.title)
         )

@@ -12,11 +12,16 @@ from models import frame_split_type
 class DetectBoundingBox(EventBase):
     def process(
         self,
-    ):
+    ) -> Tuple[bool, bbox.BoundingBoxReturnType]:
+        """
+        This function detects the bounding box of the video.
+        It does this by using the `detectBoundingBox` function from the `bounding_box_detector_pkg` module. 
+        The module is adapted from PS2CODE's work. I packaged it in a different way so that I can use it in my pipeline. 
+        """
 
         frameSplitReturn: frame_split_type.FrameSplitReturnType = (
-            self.previous_result.first().content# type:ignore
-        )  
-        result = bbox.detectBoundingBox(frameSplitReturn)
+            self.previous_result.first().content  # type:ignore
+        )
+        result: bbox.BoundingBoxReturnType = bbox.detectBoundingBox(frameSplitReturn)
 
-        return True,  result
+        return True, result

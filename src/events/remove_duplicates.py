@@ -5,8 +5,8 @@ import cv2 as cv
 from event_pipeline.base import EventBase
 from llist import sllist as linkedlist
 
-from models import frame_split_type
 import utils
+from models import frame_split_type
 
 FLANN_INDEX_KDTREE = 1
 index_params = dict(algorithm=FLANN_INDEX_KDTREE, trees=5)
@@ -15,9 +15,10 @@ search_params = dict(checks=50)
 flann = cv.FlannBasedMatcher(index_params, search_params)  # type: ignore
 
 
+#TODO: consider changeing the return type when I want to include it in the pipeline
 class RemoveDuplicates(EventBase):
     def process(
-        self, duplicate_removal_threshold: float = 0.8, *args, **kwargs
+        self, duplicate_removal_threshold: float = 0.8
     ) -> Tuple[bool, linkedlist]:
         """This function removes duplicate frames from a video by comparing the SIFT
         features of each frame.

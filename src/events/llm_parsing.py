@@ -17,7 +17,7 @@ prompt_data: PromptData = load_prompt_data()
 # TODO: think about giving the AI some examples that it could use to give me a good response
 # TODO: add information about the video in question
 class LLMParse(EventBase):
-    def process(self, *args, **kwargs) -> Tuple[bool, Union[str, None]]:
+    def process(self) -> Tuple[bool, Union[str, None]]:
         # add to the batch pipeline portion of things
         # address = f"http://{os.getenv("SERVER_IP")}/api/generate"
 
