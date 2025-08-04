@@ -151,7 +151,10 @@ dmypy.json
 
 # pytype static type analyzer
 .pytype/
-src/Videos/*
+src/videos/*
+response.txt
+src/events/dummy_event.py
+src/events/dummy_event_two.py
 
 # Cython debug symbols
 cython_debug/

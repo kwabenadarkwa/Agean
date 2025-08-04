@@ -7,14 +7,11 @@ class FrameSplitReturnType:
     def __getstate__(self):
         return self.__dict__
 
-    def __init__(self, DownloaderReturnType, frames_path):
-        self.DownloaderReturnType = DownloaderReturnType
+    def __init__(self, returnType, frames_path):
+        self.returnType = returnType
         self.frames_path = frames_path
 
     def __str__(self):
-        return f"Title: {self.DownloaderReturnType.title
-        }\nVideo Link: {self.DownloaderReturnType.link
-        }\nTranscript: {self.DownloaderReturnType.transcript
+        return f"Title: {self.returnType.title 
+        }\nTranscript: {self.returnType.transcript 
         }\nFrames Path: {self.frames_path}"
-
-

@@ -1,83 +1,38 @@
-{
-  "PipelineTask-1753714624.027439-342a4b76-d411-4bac-a6dd-51436756e9d8": [
-    {
-      "event_name": "DownloadVideo",
-      "task_id": "PipelineTask-1753714624.027439-342a4b76-d411-4bac-a6dd-51436756e9d8",
-      "start_time": "2025-07-28T15:57:05.568848",
-      "end_time": "2025-07-28T15:57:10.921713",
-      "duration": "5.353s",
-      "status": "completed",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 18889
-    },
-    {
-      "event_name": "DownloadVideo",
-      "task_id": "PipelineTask-1753714624.027439-342a4b76-d411-4bac-a6dd-51436756e9d8",
-      "start_time": "2025-07-28T15:57:05.571621",
-      "end_time": null,
-      "duration": "0.000s",
-      "status": "pending",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 18887
-    },
-    {
-      "event_name": "DownloadVideo",
-      "task_id": "PipelineTask-1753714624.027439-342a4b76-d411-4bac-a6dd-51436756e9d8",
-      "start_time": "2025-07-28T15:57:05.573888",
-      "end_time": null,
-      "duration": "0.000s",
-      "status": "pending",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 18888
-    },
-    {
-      "event_name": "DownloadVideo",
-      "task_id": "PipelineTask-1753714624.027439-342a4b76-d411-4bac-a6dd-51436756e9d8",
-      "start_time": "2025-07-28T15:57:05.574286",
-      "end_time": null,
-      "duration": "0.000s",
-      "status": "pending",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 18886
-    }
-  ],
-  "PipelineTask-1753714624.0274718-766af800-8930-467f-8b28-133efb838ec3": [
-    {
-      "event_name": "DevelopingSplitVideoIntoFrames",
-      "task_id": "PipelineTask-1753714624.0274718-766af800-8930-467f-8b28-133efb838ec3",
-      "start_time": "2025-07-28T15:57:08.143719",
-      "end_time": "2025-07-28T15:57:15.109684",
-      "duration": "6.966s",
-      "status": "completed",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 18889
-    },
-    {
-      "event_name": "DevelopingSplitVideoIntoFrames",
-      "task_id": "PipelineTask-1753714624.0274718-766af800-8930-467f-8b28-133efb838ec3",
-      "start_time": "2025-07-28T15:57:09.707564",
-      "end_time": null,
-      "duration": "0.000s",
-      "status": "pending",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 18886
-    },
-    {
-      "event_name": "DevelopingSplitVideoIntoFrames",
-      "task_id": "PipelineTask-1753714624.0274718-766af800-8930-467f-8b28-133efb838ec3",
-      "start_time": "2025-07-28T15:57:10.926683",
-      "end_time": null,
-      "duration": "0.000s",
-      "status": "pending",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 18887
-    }
-  ]
-}
+[
+  {
+    "event_name": "DownloadVideo",
+    "task_id": "PipelineTask-1754275387.352588-717df459-2b3c-42c1-a126-5685a6b69128",
+    "start_time": "2025-08-04T03:43:07.353463",
+    "end_time": "2025-08-04T03:43:11.412341",
+    "duration": "4.059s",
+    "status": "completed",
+    "error": null,
+    "retry_count": 0,
+    "process_id": null,
+    "pipeline_id": null
+  },
+  {
+    "event_name": "SplitVideoIntoFrames",
+    "task_id": "PipelineTask-1754275387.352619-d44a4294-8cd9-4ccd-9068-d5b631489a6e",
+    "start_time": "2025-08-04T03:43:11.413854",
+    "end_time": "2025-08-04T03:43:13.079398",
+    "duration": "1.666s",
+    "status": "completed",
+    "error": null,
+    "retry_count": 0,
+    "process_id": null,
+    "pipeline_id": null
+  },
+  {
+    "event_name": "DetectBoundingBox",
+    "task_id": "PipelineTask-1754275387.352633-a81bb194-3a39-4b33-8e44-b36390c5ee31",
+    "start_time": "2025-08-04T03:43:13.082192",
+    "end_time": "2025-08-04T03:43:58.504189",
+    "duration": "45.422s",
+    "status": "completed",
+    "error": null,
+    "retry_count": 0,
+    "process_id": null,
+    "pipeline_id": null
+  }
+]

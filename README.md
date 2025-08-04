@@ -6,6 +6,7 @@ _Notes_
 
 - Tesseract has to be installed and added to the path for this to work(I am going to end up using something else but for now)
 - The thing you host the application on has to have ffmpeg installed in order for the splitting into frames to work
+- You might have to install the _event_pipeline_ package from the git repository and then install it from source for it to work
 
 ## Overall System Design
 
@@ -53,14 +54,31 @@ python3 main.py
 - [x] add an event for dealing with the LLM
   - [x] add the LLM server information to an env file
   - [x] write an event that holds a prompt and then sends it to the LLM
-  - [ ] add a script that starts the Ollama server how it should be done
-- [ ] add an event that creates files after the LLM has finished/ also have another one if you don't use an LLM to parse(they could be the same mmom)
 - [x] create a flag to specify which code extraction event to use
-- [ ] fix the metrics measurements using the revised version of event_pipeline
-- [ ] write an evaluate results event to the pipeline
-- [ ] read literature on bounding box detection
+- [x] read literature on bounding box detection
+- [x] fix the metrics measurements using the revised version of event_pipeline
+- [ ] create a standard json file to measure the results against
 - [ ] integrate bounding box detection
-- [ ] use the literature to find the best method for frame content extraction
+- [ ] add an event that creates files after the LLM has finished/ also have another one if you don't use an LLM to parse(they could be the same mmom)
+- [ ] write an evaluate results event to the pipeline
+- [ ] use the literature to find the best method for frame content extraction(replace with what you currently have)
+- [ ] package tool as a browser extension(might need docker)
+
+
+
+## BUGS
+- [ ] add a thing that checks the input size of the data to the LLM and stop it in that case
+
+
+
+*Remaining Points*
+- create a standard json file to measure the results against
+- finish the bounding box detection
+- decide which method has higher accuracy
+- reconstruct the file structure for level 1 and level 2 and level 3
+- for level 4 train model to determine file that's opened first and assign code snippet to opened file
+- create the files that are detected in the file structure for level 4 
+- use image super resolution to increase the resolution of the images(maybe that's going to increase the accuracy of the results)
 
 _Current Point_(Friday, July 18th 2025)
 
@@ -77,3 +95,31 @@ _Next Points_(Saturday, July 19th 2025)
 _Current Point_(Saturday, July 19th 2025)
 
 - The student tier that I have on Microsoft Azure has ended because I have overused my quota. I am going to have to pay for the premium version of deepseek.
+- I've been able to add the LLM to the pipeline and now I'm paying some money to use deepseek.
+
+*Next Points*(Sunday, July 20th 2025)
+- Fix the issues that are occurring with the metrics feature
+- include tracking of the metrics per event in the pipeline
+
+_Current Point_(Sunday, July 20th 2025)
+- fixed the metrics issues so now the metrics show and you get a json file with them. 
+- they show how long each event takes in the pipeline but there's the problem with the batch pipeline not being tracked properly
+
+_Next Points_(Monday, July 21st 2025)
+- do research on the bounding box detection
+- figure out how to use it based on the literature
+
+_Current Point_(Monday, July 20th 2025)
+- Read through PSC2CODE code and find where they're doing the bounding box detection
+- After that, use the code and the data they have to train a model that you can use
+
+
+
+_Current Point_(Monday, July 28th 2025)
+- I've started encoding the data into the json file and I've done just one.
+- I have 19 more to go. 
+- it's taking more time than I thought it would take 
+
+
+_Current Point_(Tuesday, July 20th 2025)
+- continue the encoding and try and finish it

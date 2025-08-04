@@ -10,6 +10,7 @@ from models.test_data import YoutubeObject
 from events.dummy_event import DummyEvent
 from events.dummy_event_two import DummyEventTwo
 from events.frame_split import DevelopingSplitVideoIntoFrames
+from events.detect_bounding_box import DetectBoundingBox 
 
 
 class CodeExtractionPipeline(Pipeline):
@@ -19,5 +20,5 @@ class CodeExtractionPipeline(Pipeline):
     level = InputDataField(data_type=int, required=True)
 
 
-class TestExtractionPipeline(BatchPipeline):
+class TestBatchExtractionPipeline(BatchPipeline):
     pipeline_template = CodeExtractionPipeline

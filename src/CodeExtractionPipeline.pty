@@ -1,2 +1,11 @@
-#DownloadVideo|->SplitVideoIntoFrames|->ExtractCodeFromFrames|->LLMParse
-DownloadVideo|->SplitVideoIntoFrames|->TestExtractCodeFromFrames
+#INFO: the pipeline without bounding box 
+# DownloadVideo|->SplitVideoIntoFrames|->ExtractCodeFromFrames|->LLMParse
+
+# INFO: this is the pipeline with the bounding box without the removal of duplicate frames and without removal of non-code frames 
+#DownloadVideo|->SplitVideoIntoFrames|->DetectBoundingBox|->CropFrames|->ExtractCodeFromFrames|->LLMParse 
+DownloadVideo|->SplitVideoIntoFrames|->DetectBoundingBox
+
+
+
+#INFO: just a test pipeline 
+# DummyEvent|->DummyEventTwo
