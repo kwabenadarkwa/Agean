@@ -22,6 +22,7 @@ class DetectBoundingBox(EventBase):
         frameSplitReturn: frame_split_type.FrameSplitReturnType = (
             self.previous_result.first().content  # type:ignore
         )
+        #check to see what the accuracy of this is 
         result: bbox.BoundingBoxReturnType = bbox.detectBoundingBox(frameSplitReturn)
 
         return True, result

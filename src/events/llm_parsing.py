@@ -16,6 +16,7 @@ prompt_data: PromptData = load_prompt_data()
 
 # TODO: think about giving the AI some examples that it could use to give me a good response
 # TODO: add information about the video in question
+#TODO: add like a maximum token limit and in that case do a followup call to the LLM for results
 class LLMParse(EventBase):
     def process(self) -> Tuple[bool, Union[str, None]]:
         # add to the batch pipeline portion of things
