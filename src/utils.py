@@ -1,10 +1,10 @@
 import json
 import os
+import pathlib
 import shutil
 from os import walk
 from parser.flags_parser import args
 from typing import Union
-import pathlib
 
 from llist import sllist as linkedlist
 from natsort import natsorted
@@ -73,12 +73,16 @@ def load_frame_names(video_frames: frame_split_type.FrameSplitReturnType) -> lin
     return linkedlist(frame_names)
 
 
-def remove_all_old_frames(path_to_frames,paths:linkedlist) -> None: 
-    print("removing all old frames") 
-    path = paths.first 
-    while path is not None: 
-        remove_thing_based_on_type(str(pathlib.Path(path_to_frames,path.value))) 
-        path = path.next 
+def remove_all_old_frames(path_to_frames, paths: linkedlist) -> None:
+    path = paths.first
+    while path is not None:
+        remove_thing_based_on_type(str(pathlib.Path(path_to_frames, path.value)))
+        path = path.next
+
+
+def remove_after_failure(path) -> None:
+    shutil.rmtree(path)
+
 
 def remove_thing_based_on_type(
     remove_item: Union[

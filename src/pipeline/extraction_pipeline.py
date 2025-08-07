@@ -12,6 +12,7 @@ from events.dummy_event_two import DummyEventTwo
 from events.frame_split import DevelopingSplitVideoIntoFrames
 from events.detect_bounding_box import DetectBoundingBox 
 from events.crop_frames import CropFrames 
+from events.remove_non_code_frames import RemoveNonCodeFrames 
 
 
 class CodeExtractionPipeline(Pipeline):

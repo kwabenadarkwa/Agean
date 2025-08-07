@@ -7,6 +7,7 @@ class FrameSplitReturnType:
     def __getstate__(self):
         return self.__dict__
 
+    # TODO: returnType is the downloaderReturnType I think. it was erroring out so I remove it I will fix soon
     def __init__(self, returnType, frames_path):
         self.returnType = returnType
         self.frames_path = frames_path
