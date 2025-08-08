@@ -35,7 +35,7 @@ class ExtractCodeFromFrames(EventBase):
         content: Dict[str, str],
     ) -> None:
         with open(
-            pathlib.Path("expectedData", f"Level{str(level)}", f"{filename}.json"), "w"
+            pathlib.Path("expected_data", f"Level{str(level)}", f"{filename}.json"), "w"
         ) as f:
             f.write(json.dumps(content, indent=2))
 

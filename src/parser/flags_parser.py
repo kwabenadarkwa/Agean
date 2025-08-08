@@ -13,7 +13,7 @@ parser.add_argument(
     "-t",
     "--test-file",
     type=str,
-    default="testData.json",
+    default="test_data.json",
     help="Select file to load data from",
 )
 
