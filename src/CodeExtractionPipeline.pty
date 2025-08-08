@@ -6,7 +6,7 @@
 #DownloadVideo|->SplitVideoIntoFrames|->DetectBoundingBox|->CropFrames
 
 #DownloadVideo|->SplitVideoIntoFrames|->RemoveNonCodeFrames|->DetectBoundingBox|->CropFrames
-DownloadVideo|->SplitVideoIntoFrames|->RemoveNonCodeFrames
+DownloadVideo|->SplitVideoIntoFrames|->RemoveNonCodeFramesRuleBased
 #DownloadVideo|->SplitVideoIntoFrames
 
 
