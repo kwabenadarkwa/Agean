@@ -57,17 +57,25 @@ python3 main.py
 - [x] create a flag to specify which code extraction event to use
 - [x] read literature on bounding box detection
 - [x] fix the metrics measurements using the revised version of event_pipeline
-- [ ] create a standard json file to measure the results against
-- [ ] integrate bounding box detection
+- [x] create a standard json file to measure the results against
+- [x] integrate bounding box detection
+- [x] use the literature to find the best method for frame content extraction(replace with what you currently have)
+
+==Final countdown tomorrow==
 - [ ] add an event that creates files after the LLM has finished/ also have another one if you don't use an LLM to parse(they could be the same mmom)
-- [ ] write an evaluate results event to the pipeline
-- [ ] use the literature to find the best method for frame content extraction(replace with what you currently have)
 - [ ] package tool as a browser extension(might need docker)
+- [ ] continue the implementation part of writing the report
+
+
+## TESTING
+
+- [ ] Test rule based filtering in the entire pipeline as a whole
+- [ ] Write a test condition after the LLM is done parsing everything
 
 
 
 ## BUGS
-- [ ] add a thing that checks the input size of the data to the LLM and stop it in that case
+- [ ] add a thing that checks the input size of the data to the LLM and stop it in that case(or iterate and then split the thing into mutiple prompts or something)
 
 
 

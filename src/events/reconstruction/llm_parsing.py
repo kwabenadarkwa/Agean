@@ -7,11 +7,11 @@ from dotenv import load_dotenv
 from event_pipeline.base import EventBase
 from openai import OpenAI
 
-from models.prompt_data import PromptData
-from utils import load_prompt_data
+from models.prompt_data import FrameExtractionPromptData
+from utils import load_prompt_for_frame_parsing
 
 load_dotenv()
-prompt_data: PromptData = load_prompt_data()
+prompt_data: FrameExtractionPromptData = load_prompt_for_frame_parsing()
 
 
 # TODO: think about giving the AI some examples that it could use to give me a good response

@@ -23,7 +23,14 @@ parser.add_argument(
     "--prompt-file",
     type=str,
     default=str(pathlib.Path("prompts", "parse_prompts.json")),
-    help="This file contains the prompts that will be used to generate the AI's response",
+    help="This file contains the prompts that will be used to generate the AI's response for the individual frames",
 )
 
+parser.add_argument(
+    "-P",
+    "--create-file-prompts",
+    type=str,
+    default=str(pathlib.Path("prompts", "create_file_prompts.json")), 
+    help="This contains all the prompt that have to do with creation of the actual project file in the last stage of the pipeline",
+) 
 args = parser.parse_args()

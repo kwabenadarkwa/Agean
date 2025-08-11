@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class PromptData(BaseModel):
+class FrameExtractionPromptData(BaseModel):
     app_description: str
     your_role: str
     input_description: str
@@ -11,3 +11,8 @@ class PromptData(BaseModel):
     level_2: str
     level_3: str
     level_4: str
+
+class FileCreationPromptData(BaseModel): 
+    app_description: str 
+    your_role: str 
+

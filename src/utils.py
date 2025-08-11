@@ -10,7 +10,7 @@ from llist import sllist as linkedlist
 from natsort import natsorted
 
 from models import download_type, frame_split_type, test_data
-from models.prompt_data import PromptData
+from models.prompt_data import FileCreationPromptData, FrameExtractionPromptData
 from models.test_data import YoutubeObject
 
 
@@ -46,11 +46,15 @@ def load_youtube_data() -> test_data.TestData:
         return test_data.TestData(**data)
 
 
-# TODO: this could possible be abstracted into a better function
-def load_prompt_data() -> PromptData:
+def load_prompt_for_frame_parsing() -> FrameExtractionPromptData:
     with open(args.prompt_file, "r") as f:
         data = json.load(f)
-        return PromptData(**data)
+        return FrameExtractionPromptData(**data)
+
+def load_prompt_data_for_file_creation() -> FileCreationPromptData: 
+    with open(args.create_file_prompts, "r") as f: 
+        data = json.load(f) 
+        return FileCreationPromptData(**data)                             
 
 
 def load_frame_names(video_frames: frame_split_type.FrameSplitReturnType) -> linkedlist:
