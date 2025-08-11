@@ -62,7 +62,7 @@ python3 main.py
 - [x] use the literature to find the best method for frame content extraction(replace with what you currently have)
 
 ==Final countdown tomorrow==
-- [ ] add an event that creates files after the LLM has finished/ also have another one if you don't use an LLM to parse(they could be the same mmom)
+- [x] add an event that creates files after the LLM has finished/ also have another one if you don't use an LLM to parse(they could be the same mmom)
 - [ ] package tool as a browser extension(might need docker)
 - [ ] continue the implementation part of writing the report
 
@@ -70,6 +70,7 @@ python3 main.py
 ## TESTING
 
 - [ ] Test rule based filtering in the entire pipeline as a whole
+- [ ] Test
 - [ ] Write a test condition after the LLM is done parsing everything
 
 

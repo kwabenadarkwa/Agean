@@ -36,9 +36,11 @@ class LLMParse(EventBase):
                     "content": f"App Description: \n{prompt_data.app_description}\
                             \nInput Description: \n{prompt_data.input_description}\
                             \nOutput Description: \n{prompt_data.output_description}\
+                            \nOCR Handling Guidance: \n{prompt_data.ocr_handling_guidance}\
                             \nLevel Preamble: \n{prompt_data.level_preamble}\
                             \nLevel Info: \n{level_info}\
                             \nInput: \n{input_data}\
+                            \nExample Return: \n{prompt_data.example_return}\
                     ",
                 },
             ],

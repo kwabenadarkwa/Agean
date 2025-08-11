@@ -49,8 +49,10 @@ class CreateProject(EventBase):
                 {
                     "role": "user",
                     "content": f"App Description: \n{file_creation_prompt_data.app_description}\
+                            \nReconstruction Guidelines: \n{file_creation_prompt_data.reconstruction_guidelines}\
+                            \nAttribution Requirements: \n{file_creation_prompt_data.attribution_requirements}\
+                            \nOutput Format: \n{file_creation_prompt_data.output_format}\
                             \nYouTube Video Context: \n{youtube_info}\
-                            \nLevel Info: \n{level_info}\
                             \nFrame Data Input: \n{input_data}\
                     ",
                 },

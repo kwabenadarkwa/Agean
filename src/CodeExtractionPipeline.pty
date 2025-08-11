@@ -5,9 +5,10 @@
 #DownloadVideo|->SplitVideoIntoFrames|->DetectBoundingBox|->CropFrames|->ExtractCodeFromFrames|->LLMParse 
 #DownloadVideo|->SplitVideoIntoFrames|->DetectBoundingBox|->CropFrames
 
-DownloadVideo|->SplitVideoIntoFrames|->RemoveNonCodeFrames|->DetectBoundingBox|->CropFrames|->ExtractCodeFromFrames|->LLMParse|->CreateProject
+#DownloadVideo|->SplitVideoIntoFrames|->RemoveNonCodeFrames|->DetectBoundingBox|->CropFrames|->ExtractCodeFromFrames|->LLMParse|->CreateProject
 # DownloadVideo|->SplitVideoIntoFrames|->RemoveNonCodeFramesRuleBased
 #DownloadVideo|->SplitVideoIntoFrames
+DownloadVideo|->SplitVideoIntoFrames|->GoogleVisionExtractCodeFromFrames
 
 
 #INFO: just a test pipeline 
