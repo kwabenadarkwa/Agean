@@ -1,3 +1,9 @@
+# think about passing the level during testing.
+# pass the name of the json file that's created to the llm
+# give it a prompt on all the information is needs to know.
+# youtube channel data, name of videos
+# this should be the final stagbe
+
 import json
 import os
 from parser.flags_parser import args as level_args
@@ -14,13 +20,8 @@ load_dotenv()
 prompt_data: PromptData = load_prompt_data()
 
 
-# TODO: think about giving the AI some examples that it could use to give me a good response
-# TODO: add information about the video in question
-#TODO: add like a maximum token limit and in that case do a followup call to the LLM for results
-class LLMParse(EventBase):
+class CreateProject(EventBase): 
     def process(self) -> Tuple[bool, Union[str, None]]:
-        # add to the batch pipeline portion of things
-        # address = f"http://{os.getenv("SERVER_IP")}/api/generate"
 
         client = OpenAI(
             api_key=f"{os.getenv("DEEPSEEK_API_KEY")}",
@@ -44,7 +45,7 @@ class LLMParse(EventBase):
                     ",
                 },
             ],
-            temperature=0.0,
+            temperature=0.4,
             stream=False,
         )
 
@@ -67,7 +68,3 @@ class LLMParse(EventBase):
                 return prompt_data.level_4
             case _:
                 return prompt_data.level_1
-
-
-if __name__ == "__main__":
-    pass

@@ -10,8 +10,7 @@ import utils
 from models import frame_split_type
 
 
-# TODO: use the google vision api to extract the text from the frames
-class ExtractCodeFromFrames(EventBase):
+class PytesseractExtractCodeFromFrames(EventBase):
     def process(self) -> Tuple[bool, Dict[str, str]]:
         video: frame_split_type.FrameSplitReturnType = (
             self.previous_result.first().content  # type:ignore

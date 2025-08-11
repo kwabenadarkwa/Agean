@@ -10,6 +10,7 @@ from models import frame_split_type
 
 
 class DetectBoundingBox(EventBase):
+    #TODO: add the VID2XML one and then have a test for that too to show the level of accuracy you get in the output
     def process(
         self,
     ) -> Tuple[bool, bbox.BoundingBoxReturnType]:

@@ -10,9 +10,9 @@ from .detect_bounding_box import DetectBoundingBox
 from .download_video import DownloadVideo
 from .dummy_event import DummyEvent
 from .dummy_event_two import DummyEventTwo
-from .extract_code import ExtractCodeFromFrames
+from .ocr_code_extraction import PytesseractExtractCodeFromFrames 
 from .frame_split import SplitVideoIntoFrames
-from .llm_parsing import LLMParse
+from .reconstruction import LLMParse 
 from .remove_duplicates import RemoveDuplicates
 
 from .code_frame_filtering import RemoveNonCodeFramesRuleBased, RemoveNonCodeFramesWithModel
@@ -21,7 +21,7 @@ __all__ = [
     "CropFrames",
     "DetectBoundingBox", 
     "DownloadVideo",
-    "ExtractCodeFromFrames",
+    "PytesseractExtractCodeFromFrames",
     "SplitVideoIntoFrames",
     "LLMParse",
     "RemoveDuplicates",

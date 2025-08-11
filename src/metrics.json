@@ -1,38 +1,132 @@
-[
-  {
-    "event_name": "DownloadVideo",
-    "task_id": "PipelineTask-1754580142.806415-d9212f1c-7da7-49bb-bf88-d5ca8133dae1",
-    "start_time": "2025-08-07T16:22:22.808001",
-    "end_time": "2025-08-07T16:22:23.770356",
-    "duration": "0.962s",
-    "status": "completed",
-    "error": null,
-    "retry_count": 0,
-    "process_id": null,
-    "pipeline_id": null
-  },
-  {
-    "event_name": "SplitVideoIntoFrames",
-    "task_id": "PipelineTask-1754580142.80645-27fc3540-0e9e-416d-aaf1-a5fb5473b299",
-    "start_time": "2025-08-07T16:22:23.771658",
-    "end_time": "2025-08-07T16:22:27.391861",
-    "duration": "3.620s",
-    "status": "completed",
-    "error": null,
-    "retry_count": 0,
-    "process_id": null,
-    "pipeline_id": null
-  },
-  {
-    "event_name": "RemoveNonCodeFrames",
-    "task_id": "PipelineTask-1754580142.806464-1e2ea18e-d2cc-407d-8b90-2ce9e54cd38e",
-    "start_time": "2025-08-07T16:22:27.398709",
-    "end_time": "2025-08-07T16:23:37.134184",
-    "duration": "69.735s",
-    "status": "completed",
-    "error": null,
-    "retry_count": 0,
-    "process_id": null,
-    "pipeline_id": null
-  }
-]
+{
+  "CodeExtractionPipeline-1754851532.525032-c2a1fb16-5924-4f77-bbbb-f5e680317b71": [
+    {
+      "event_name": "DummyEvent",
+      "task_id": "PipelineTask-1754851532.5148952-6ec9a5ae-2f1b-4361-926f-f9dc039c2b7d",
+      "start_time": "2025-08-10T19:45:46.092945",
+      "end_time": "2025-08-10T19:45:46.097984",
+      "duration": "0.005s",
+      "status": "completed",
+      "error": null,
+      "retry_count": 0,
+      "process_id": 13638,
+      "pipeline_id": "CodeExtractionPipeline-1754851532.525032-c2a1fb16-5924-4f77-bbbb-f5e680317b71"
+    },
+    {
+      "event_name": "DummyEventTwo",
+      "task_id": "PipelineTask-1754851532.514945-15442d12-70bc-49a9-8543-fe6e8ed26490",
+      "start_time": "2025-08-10T19:45:46.100439",
+      "end_time": "2025-08-10T19:45:46.102898",
+      "duration": "0.002s",
+      "status": "completed",
+      "error": null,
+      "retry_count": 0,
+      "process_id": 13638,
+      "pipeline_id": "CodeExtractionPipeline-1754851532.525032-c2a1fb16-5924-4f77-bbbb-f5e680317b71"
+    }
+  ],
+  "CodeExtractionPipeline-1754851532.52498-2ed6687e-2182-4404-a9c0-46d99f0333ac": [
+    {
+      "event_name": "DummyEvent",
+      "task_id": "PipelineTask-1754851532.5148952-6ec9a5ae-2f1b-4361-926f-f9dc039c2b7d",
+      "start_time": "2025-08-10T19:45:46.093990",
+      "end_time": "2025-08-10T19:45:46.098573",
+      "duration": "0.005s",
+      "status": "completed",
+      "error": null,
+      "retry_count": 0,
+      "process_id": 13635,
+      "pipeline_id": "CodeExtractionPipeline-1754851532.52498-2ed6687e-2182-4404-a9c0-46d99f0333ac"
+    },
+    {
+      "event_name": "DummyEventTwo",
+      "task_id": "PipelineTask-1754851532.514945-15442d12-70bc-49a9-8543-fe6e8ed26490",
+      "start_time": "2025-08-10T19:45:46.101483",
+      "end_time": "2025-08-10T19:45:46.110318",
+      "duration": "0.009s",
+      "status": "completed",
+      "error": null,
+      "retry_count": 0,
+      "process_id": 13635,
+      "pipeline_id": "CodeExtractionPipeline-1754851532.52498-2ed6687e-2182-4404-a9c0-46d99f0333ac"
+    }
+  ],
+  "CodeExtractionPipeline-1754851532.525006-8094d2c9-b8fd-4f38-9fd9-5af6a10b31d0": [
+    {
+      "event_name": "DummyEvent",
+      "task_id": "PipelineTask-1754851532.5148952-6ec9a5ae-2f1b-4361-926f-f9dc039c2b7d",
+      "start_time": "2025-08-10T19:45:46.095794",
+      "end_time": "2025-08-10T19:45:46.098268",
+      "duration": "0.002s",
+      "status": "completed",
+      "error": null,
+      "retry_count": 0,
+      "process_id": 13637,
+      "pipeline_id": "CodeExtractionPipeline-1754851532.525006-8094d2c9-b8fd-4f38-9fd9-5af6a10b31d0"
+    },
+    {
+      "event_name": "DummyEventTwo",
+      "task_id": "PipelineTask-1754851532.514945-15442d12-70bc-49a9-8543-fe6e8ed26490",
+      "start_time": "2025-08-10T19:45:46.101144",
+      "end_time": "2025-08-10T19:45:46.106614",
+      "duration": "0.005s",
+      "status": "completed",
+      "error": null,
+      "retry_count": 0,
+      "process_id": 13637,
+      "pipeline_id": "CodeExtractionPipeline-1754851532.525006-8094d2c9-b8fd-4f38-9fd9-5af6a10b31d0"
+    }
+  ],
+  "CodeExtractionPipeline-1754851532.525057-861e4729-a68b-4769-baee-830b2cc96a19": [
+    {
+      "event_name": "DummyEvent",
+      "task_id": "PipelineTask-1754851532.5148952-6ec9a5ae-2f1b-4361-926f-f9dc039c2b7d",
+      "start_time": "2025-08-10T19:45:46.097378",
+      "end_time": "2025-08-10T19:45:46.098914",
+      "duration": "0.002s",
+      "status": "completed",
+      "error": null,
+      "retry_count": 0,
+      "process_id": 13636,
+      "pipeline_id": "CodeExtractionPipeline-1754851532.525057-861e4729-a68b-4769-baee-830b2cc96a19"
+    },
+    {
+      "event_name": "DummyEventTwo",
+      "task_id": "PipelineTask-1754851532.514945-15442d12-70bc-49a9-8543-fe6e8ed26490",
+      "start_time": "2025-08-10T19:45:46.100780",
+      "end_time": "2025-08-10T19:45:46.103964",
+      "duration": "0.003s",
+      "status": "completed",
+      "error": null,
+      "retry_count": 0,
+      "process_id": 13636,
+      "pipeline_id": "CodeExtractionPipeline-1754851532.525057-861e4729-a68b-4769-baee-830b2cc96a19"
+    }
+  ],
+  "CodeExtractionPipeline-1754851532.5248792-b8c5ec62-e21f-41d1-b3e0-010da7190203": [
+    {
+      "event_name": "DummyEvent",
+      "task_id": "PipelineTask-1754851532.5148952-6ec9a5ae-2f1b-4361-926f-f9dc039c2b7d",
+      "start_time": "2025-08-10T19:45:46.114705",
+      "end_time": "2025-08-10T19:45:46.115494",
+      "duration": "0.001s",
+      "status": "completed",
+      "error": null,
+      "retry_count": 0,
+      "process_id": 13638,
+      "pipeline_id": "CodeExtractionPipeline-1754851532.5248792-b8c5ec62-e21f-41d1-b3e0-010da7190203"
+    },
+    {
+      "event_name": "DummyEventTwo",
+      "task_id": "PipelineTask-1754851532.514945-15442d12-70bc-49a9-8543-fe6e8ed26490",
+      "start_time": "2025-08-10T19:45:46.118440",
+      "end_time": "2025-08-10T19:45:46.119306",
+      "duration": "0.001s",
+      "status": "completed",
+      "error": null,
+      "retry_count": 0,
+      "process_id": 13638,
+      "pipeline_id": "CodeExtractionPipeline-1754851532.5248792-b8c5ec62-e21f-41d1-b3e0-010da7190203"
+    }
+  ]
+}

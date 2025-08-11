@@ -1,4 +1,5 @@
 import argparse
+import pathlib
 
 parser = argparse.ArgumentParser(description="Process event pipeline with flags")
 parser.add_argument(
@@ -21,7 +22,7 @@ parser.add_argument(
     "-p",
     "--prompt-file",
     type=str,
-    default="prompts.json",
+    default=str(pathlib.Path("prompts", "parse_prompts.json")),
     help="This file contains the prompts that will be used to generate the AI's response",
 )
 

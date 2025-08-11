@@ -208,14 +208,12 @@ def is_code_frame(image_path: Union[str, Path], config: type[CodeDetectionConfig
         True if image is detected as code frame, False otherwise
     """
     try:
-        # Run all detection functions
         has_monospace = detect_monospace_text(image_path, config)
         has_syntax_colors = detect_programming_colors(image_path, config)
         has_code_structure = detect_indentation_patterns(image_path, config)
         has_line_numbers = detect_line_numbers(image_path, config)
         has_dark_theme = detect_dark_background(image_path, config)
 
-        # Calculate weighted score
         score = (
             has_monospace * config.WEIGHTS["monospace"]
             + has_syntax_colors * config.WEIGHTS["syntax_colors"]
