@@ -1,6 +1,6 @@
+import json
 import os
 import pathlib
-import json
 from typing import Dict, Tuple
 
 from dotenv import load_dotenv
@@ -18,19 +18,21 @@ load_dotenv()
 class GoogleVisionExtractCodeFromFrames(EventBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        
+
         credentials_info = {
             "type": "service_account",
             "project_id": os.getenv("GOOGLE_CLOUD_PROJECT_ID"),
             "private_key_id": os.getenv("GOOGLE_CLOUD_PRIVATE_KEY_ID"),
-            "private_key": os.getenv("GOOGLE_CLOUD_PRIVATE_KEY").replace('\\n', '\n'),#type: ignore 
+            "private_key": os.getenv("GOOGLE_CLOUD_PRIVATE_KEY").replace("\\n", "\n"),  # type: ignore
             "client_email": os.getenv("GOOGLE_CLOUD_CLIENT_EMAIL"),
             "client_id": os.getenv("GOOGLE_CLOUD_CLIENT_ID"),
             "auth_uri": os.getenv("GOOGLE_CLOUD_AUTH_URI"),
-            "token_uri": os.getenv("GOOGLE_CLOUD_TOKEN_URI")
+            "token_uri": os.getenv("GOOGLE_CLOUD_TOKEN_URI"),
         }
-        
-        credentials = service_account.Credentials.from_service_account_info(credentials_info)
+
+        credentials = service_account.Credentials.from_service_account_info(
+            credentials_info
+        )
         self.client = vision.ImageAnnotatorClient(credentials=credentials)
 
     def process(self) -> Tuple[bool, Dict[str, str]]:
@@ -62,7 +64,7 @@ class GoogleVisionExtractCodeFromFrames(EventBase):
     def extract_content(self, video, frame_name):
         image_path = pathlib.Path(video.frames_path, frame_name)
 
-        with open(image_path, 'rb') as image_file:
+        with open(image_path, "rb") as image_file:
             content = image_file.read()
 
         image = vision.Image(content=content)
@@ -70,10 +72,12 @@ class GoogleVisionExtractCodeFromFrames(EventBase):
         texts = response.text_annotations
 
         if texts:
+            # TODO: maybe it might be a sensible step to figure out which bounding box contains the code elements.
+            # so maybe instead of actually finding the bouding box. we send the texts object that is extracted. we comb through the texts object
+            # to find which of the descriptions actually contains code. and then remove the ones that don't. that could be a step after this point
             return texts[0].description
 
         if response.error.message:
-            raise Exception(f'{response.error.message}')
+            raise Exception(f"{response.error.message}")
 
         return ""
-

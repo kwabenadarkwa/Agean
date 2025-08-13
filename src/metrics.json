@@ -1,132 +1,38 @@
-{
-  "CodeExtractionPipeline-1754851532.525032-c2a1fb16-5924-4f77-bbbb-f5e680317b71": [
-    {
-      "event_name": "DummyEvent",
-      "task_id": "PipelineTask-1754851532.5148952-6ec9a5ae-2f1b-4361-926f-f9dc039c2b7d",
-      "start_time": "2025-08-10T19:45:46.092945",
-      "end_time": "2025-08-10T19:45:46.097984",
-      "duration": "0.005s",
-      "status": "completed",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 13638,
-      "pipeline_id": "CodeExtractionPipeline-1754851532.525032-c2a1fb16-5924-4f77-bbbb-f5e680317b71"
-    },
-    {
-      "event_name": "DummyEventTwo",
-      "task_id": "PipelineTask-1754851532.514945-15442d12-70bc-49a9-8543-fe6e8ed26490",
-      "start_time": "2025-08-10T19:45:46.100439",
-      "end_time": "2025-08-10T19:45:46.102898",
-      "duration": "0.002s",
-      "status": "completed",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 13638,
-      "pipeline_id": "CodeExtractionPipeline-1754851532.525032-c2a1fb16-5924-4f77-bbbb-f5e680317b71"
-    }
-  ],
-  "CodeExtractionPipeline-1754851532.52498-2ed6687e-2182-4404-a9c0-46d99f0333ac": [
-    {
-      "event_name": "DummyEvent",
-      "task_id": "PipelineTask-1754851532.5148952-6ec9a5ae-2f1b-4361-926f-f9dc039c2b7d",
-      "start_time": "2025-08-10T19:45:46.093990",
-      "end_time": "2025-08-10T19:45:46.098573",
-      "duration": "0.005s",
-      "status": "completed",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 13635,
-      "pipeline_id": "CodeExtractionPipeline-1754851532.52498-2ed6687e-2182-4404-a9c0-46d99f0333ac"
-    },
-    {
-      "event_name": "DummyEventTwo",
-      "task_id": "PipelineTask-1754851532.514945-15442d12-70bc-49a9-8543-fe6e8ed26490",
-      "start_time": "2025-08-10T19:45:46.101483",
-      "end_time": "2025-08-10T19:45:46.110318",
-      "duration": "0.009s",
-      "status": "completed",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 13635,
-      "pipeline_id": "CodeExtractionPipeline-1754851532.52498-2ed6687e-2182-4404-a9c0-46d99f0333ac"
-    }
-  ],
-  "CodeExtractionPipeline-1754851532.525006-8094d2c9-b8fd-4f38-9fd9-5af6a10b31d0": [
-    {
-      "event_name": "DummyEvent",
-      "task_id": "PipelineTask-1754851532.5148952-6ec9a5ae-2f1b-4361-926f-f9dc039c2b7d",
-      "start_time": "2025-08-10T19:45:46.095794",
-      "end_time": "2025-08-10T19:45:46.098268",
-      "duration": "0.002s",
-      "status": "completed",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 13637,
-      "pipeline_id": "CodeExtractionPipeline-1754851532.525006-8094d2c9-b8fd-4f38-9fd9-5af6a10b31d0"
-    },
-    {
-      "event_name": "DummyEventTwo",
-      "task_id": "PipelineTask-1754851532.514945-15442d12-70bc-49a9-8543-fe6e8ed26490",
-      "start_time": "2025-08-10T19:45:46.101144",
-      "end_time": "2025-08-10T19:45:46.106614",
-      "duration": "0.005s",
-      "status": "completed",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 13637,
-      "pipeline_id": "CodeExtractionPipeline-1754851532.525006-8094d2c9-b8fd-4f38-9fd9-5af6a10b31d0"
-    }
-  ],
-  "CodeExtractionPipeline-1754851532.525057-861e4729-a68b-4769-baee-830b2cc96a19": [
-    {
-      "event_name": "DummyEvent",
-      "task_id": "PipelineTask-1754851532.5148952-6ec9a5ae-2f1b-4361-926f-f9dc039c2b7d",
-      "start_time": "2025-08-10T19:45:46.097378",
-      "end_time": "2025-08-10T19:45:46.098914",
-      "duration": "0.002s",
-      "status": "completed",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 13636,
-      "pipeline_id": "CodeExtractionPipeline-1754851532.525057-861e4729-a68b-4769-baee-830b2cc96a19"
-    },
-    {
-      "event_name": "DummyEventTwo",
-      "task_id": "PipelineTask-1754851532.514945-15442d12-70bc-49a9-8543-fe6e8ed26490",
-      "start_time": "2025-08-10T19:45:46.100780",
-      "end_time": "2025-08-10T19:45:46.103964",
-      "duration": "0.003s",
-      "status": "completed",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 13636,
-      "pipeline_id": "CodeExtractionPipeline-1754851532.525057-861e4729-a68b-4769-baee-830b2cc96a19"
-    }
-  ],
-  "CodeExtractionPipeline-1754851532.5248792-b8c5ec62-e21f-41d1-b3e0-010da7190203": [
-    {
-      "event_name": "DummyEvent",
-      "task_id": "PipelineTask-1754851532.5148952-6ec9a5ae-2f1b-4361-926f-f9dc039c2b7d",
-      "start_time": "2025-08-10T19:45:46.114705",
-      "end_time": "2025-08-10T19:45:46.115494",
-      "duration": "0.001s",
-      "status": "completed",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 13638,
-      "pipeline_id": "CodeExtractionPipeline-1754851532.5248792-b8c5ec62-e21f-41d1-b3e0-010da7190203"
-    },
-    {
-      "event_name": "DummyEventTwo",
-      "task_id": "PipelineTask-1754851532.514945-15442d12-70bc-49a9-8543-fe6e8ed26490",
-      "start_time": "2025-08-10T19:45:46.118440",
-      "end_time": "2025-08-10T19:45:46.119306",
-      "duration": "0.001s",
-      "status": "completed",
-      "error": null,
-      "retry_count": 0,
-      "process_id": 13638,
-      "pipeline_id": "CodeExtractionPipeline-1754851532.5248792-b8c5ec62-e21f-41d1-b3e0-010da7190203"
-    }
-  ]
-}
+[
+  {
+    "event_name": "DownloadVideo",
+    "task_id": "PipelineTask-1755108364.050642-6be7abef-f60f-47cf-b410-1ddbdb35f6a9",
+    "start_time": "2025-08-13T19:06:04.052902",
+    "end_time": "2025-08-13T19:06:06.198459",
+    "duration": "2.146s",
+    "status": "completed",
+    "error": null,
+    "retry_count": 0,
+    "process_id": null,
+    "pipeline_id": null
+  },
+  {
+    "event_name": "SplitVideoIntoFrames",
+    "task_id": "PipelineTask-1755108364.050679-8aba9324-2b78-4a92-bc73-3e940c887e8c",
+    "start_time": "2025-08-13T19:06:06.200501",
+    "end_time": "2025-08-13T19:06:08.146632",
+    "duration": "1.946s",
+    "status": "completed",
+    "error": null,
+    "retry_count": 0,
+    "process_id": null,
+    "pipeline_id": null
+  },
+  {
+    "event_name": "GoogleVisionExtractCodeFromFrames",
+    "task_id": "PipelineTask-1755108364.050693-0d81eb08-f670-463a-ac11-3b9fabba3050",
+    "start_time": "2025-08-13T19:06:08.288692",
+    "end_time": "2025-08-13T19:16:27.193125",
+    "duration": "618.904s",
+    "status": "completed",
+    "error": null,
+    "retry_count": 0,
+    "process_id": null,
+    "pipeline_id": null
+  }
+]

@@ -10,7 +10,7 @@ from .detect_bounding_box import DetectBoundingBox
 from .download_video import DownloadVideo
 from .dummy_event import DummyEvent
 from .dummy_event_two import DummyEventTwo
-from .ocr_code_extraction import PytesseractExtractCodeFromFrames 
+from .ocr_code_extraction import PytesseractExtractCodeFromFrames, GoogleVisionExtractCodeFromFrames 
 from .frame_split import SplitVideoIntoFrames
 from .reconstruction import LLMParse 
 from .remove_duplicates import RemoveDuplicates

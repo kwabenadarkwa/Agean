@@ -10,7 +10,7 @@ from models.test_data import YoutubeObject
 
 class DownloadVideo(EventBase):
     def process(
-        self, youtube_object:list[YoutubeObject], *args, **kwargs
+        self, youtube_object: list[YoutubeObject], *args, **kwargs
     ) -> Tuple[bool, download_type.DownloaderReturnType]:
         """This function downloads a video from a link.
         Args:
@@ -20,13 +20,15 @@ class DownloadVideo(EventBase):
         Raises:
         """
         self.stop_on_error = True
+
         # INFO: the paraamter that is passed inside of the batch pipeline is a list of strings
         # hence to access it we need to access the first element of the list
-
-        yt = YouTube(youtube_object[0].link) 
+        link_to_video = youtube_object[0].link
+        yt = YouTube(link_to_video)
         filepath = pathlib.Path("videos", yt.title + ".mp4")
 
-        #TODO: don't forget that the captions might be necesary to the LLM to increse the accuracy of it's results
+        # TODO: don't forget that the captions might be necesary to the LLM to increse the accuracy of it's results
+        # make sure to check if the link is a valid youtube link before attempting to download it
         if yt.captions.get("en"):
             captions = yt.captions["en"].generate_srt_captions()
         elif yt.captions.get("a.en"):
@@ -41,6 +43,4 @@ class DownloadVideo(EventBase):
             # TODO: find something better to return here
             return False, download_type.DownloaderReturnType(None, None, None)
 
-        return True, download_type.DownloaderReturnType(
-            yt.title, filepath, captions
-        )
+        return True, download_type.DownloaderReturnType(yt.title, filepath, captions)

@@ -12,4 +12,4 @@ DownloadVideo|->SplitVideoIntoFrames|->GoogleVisionExtractCodeFromFrames
 
 
 #INFO: just a test pipeline 
-DummyEvent|->DummyEventTwo
+#DummyEvent|->DummyEventTwo
