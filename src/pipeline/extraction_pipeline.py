@@ -1,7 +1,8 @@
 from event_pipeline.fields import InputDataField
 from event_pipeline.pipeline import BatchPipeline, Pipeline
 
-from events import (CropFrames, DetectBoundingBox, DownloadVideo, LLMParse,
+from events import (CreateProject, CropFrames, DetectBoundingBox,
+                    GoogleVisionExtractCodeFromFrames, LLMParse,
                     PytesseractExtractCodeFromFrames, RemoveDuplicates,
                     RemoveNonCodeFramesRuleBased, RemoveNonCodeFramesWithModel,
                     SplitVideoIntoFrames)

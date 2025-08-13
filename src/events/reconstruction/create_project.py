@@ -22,7 +22,9 @@ frame_extraction_prompt_data: FrameExtractionPromptData = (
 
 
 class CreateProject(EventBase):
-    def process(self, youtube_object: YoutubeObject) -> Tuple[bool, Union[str, None]]:
+    def process(
+        self, youtube_object: list[YoutubeObject]
+    ) -> Tuple[bool, Union[str, None]]:
 
         client = OpenAI(
             api_key=f"{os.getenv("DEEPSEEK_API_KEY")}",
@@ -33,11 +35,11 @@ class CreateProject(EventBase):
 
         youtube_info = f"""
         YouTube Video Information:
-        - Title: {youtube_object.title}
-        - Link: {youtube_object.link}
-        - Duration: {youtube_object.duration}
-        - IDE/Theme: {youtube_object.ide}
-        - Theme: {youtube_object.theme}
+        - Title: {youtube_object[0].title}
+        - Link: {youtube_object[0].link}
+        - Duration: {youtube_object[0].duration}
+        - IDE/Theme: {youtube_object[0].ide}
+        - Theme: {youtube_object[0].theme}
 
         Please include this information as a comment header in the generated Python file to attribute the source.
         """
@@ -73,9 +75,9 @@ class CreateProject(EventBase):
         return True, f"Generated Python file: {file_path}"
 
     def _save_generated_file(
-        self, youtube_object: YoutubeObject, code_content: str
+        self, youtube_object: list[YoutubeObject], code_content: str
     ) -> str:
-        safe_title = re.sub(r"[^\w\s-]", "", youtube_object.title)
+        safe_title = re.sub(r"[^\w\s-]", "", youtube_object[0].title)
         safe_title = re.sub(r"[-\s]+", "_", safe_title).strip("_")
 
         output_dir = Path("generated_projects")
