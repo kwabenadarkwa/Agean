@@ -9,8 +9,3 @@ class YoutubeObject(BaseModel):
     duration: str
 
 
-class TestData(BaseModel):
-    level_1: list[YoutubeObject]
-    level_2: list[YoutubeObject]
-    level_3: list[YoutubeObject]
-    level_4: list[YoutubeObject]

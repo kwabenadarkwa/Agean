@@ -14,10 +14,6 @@ from ...utils import (load_prompt_data_for_file_creation,
                       load_prompt_for_frame_parsing)
 
 load_dotenv()
-file_creation_prompt_data: FileCreationPromptData = load_prompt_data_for_file_creation()
-frame_extraction_prompt_data: FrameExtractionPromptData = (
-    load_prompt_for_frame_parsing()
-)
 
 
 class CreateProject(EventBase):
@@ -25,6 +21,8 @@ class CreateProject(EventBase):
         self, youtube_object: list[YoutubeObject]
     ) -> Tuple[bool, Union[str, None]]:
 
+        file_creation_prompt_data = load_prompt_data_for_file_creation()
+        
         client = OpenAI(
             api_key=f"{os.getenv("DEEPSEEK_API_KEY")}",
             base_url="https://api.deepseek.com",

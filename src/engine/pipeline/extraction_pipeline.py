@@ -2,16 +2,15 @@ from event_pipeline.fields import InputDataField
 from event_pipeline.pipeline import BatchPipeline, Pipeline
 
 from ..events import (CreateProject, CropFrames, DetectBoundingBox,
-                      GoogleVisionExtractCodeFromFrames, LLMParse,
-                      RemoveDuplicates, RemoveNonCodeFramesRuleBased,
+                      DownloadVideo, GoogleVisionExtractCodeFromFrames,
+                      LLMParse, RemoveDuplicates, RemoveNonCodeFramesRuleBased,
                       RemoveNonCodeFramesWithModel, SplitVideoIntoFrames)
 from ..models.test_data import YoutubeObject
 
 
 class CodeExtractionPipeline(Pipeline):
-    meta = {
-        "pointy": "DownloadVideo|->SplitVideoIntoFrames|->RemoveNonCodeFramesRuleBased|->DetectBoundingBox|->CropFrames|->GoogleVisionExtractCodeFromFrames|->LLMParse|->CreateProject"
-    }
+    class Meta:
+        pointy = "DownloadVideo|->SplitVideoIntoFrames|->RemoveNonCodeFramesRuleBased|->DetectBoundingBox|->CropFrames|->GoogleVisionExtractCodeFromFrames|->LLMParse|->CreateProject"
 
     youtube_object = InputDataField(data_type=list, batch_size=1)
     frame_extraction_fps = InputDataField(data_type=int, required=True)

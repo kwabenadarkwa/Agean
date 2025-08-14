@@ -11,7 +11,6 @@ from ...models.prompt_data import FrameExtractionPromptData
 from ...utils import load_prompt_for_frame_parsing
 
 load_dotenv()
-prompt_data: FrameExtractionPromptData = load_prompt_for_frame_parsing()
 
 
 # TODO: think about giving the AI some examples that it could use to give me a good response
@@ -27,6 +26,8 @@ class LLMParse(EventBase):
         # FIXME: it's possible that the user might not know about the levels and won't enter any value. in that case don't pass the data for the level. this is only added for configurability
         level_info = self.get_level_data(level)
         input_data = self.previous_result.first().content  # type:ignore
+
+        prompt_data = load_prompt_for_frame_parsing()
 
         response = client.chat.completions.create(
             model="deepseek-chat",
@@ -57,6 +58,7 @@ class LLMParse(EventBase):
         return True, response.choices[0].message.content
 
     def get_level_data(self, level) -> str:
+        prompt_data = load_prompt_for_frame_parsing()
         match level:
             case 1:
                 return prompt_data.level_1

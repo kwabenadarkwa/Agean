@@ -8,17 +8,10 @@ from typing import Union
 from llist import sllist as linkedlist
 from natsort import natsorted
 
-from .constants import (DEFAULT_CREATE_FILE_PROMPTS, DEFAULT_PROMPT_FILE,
-                        DEFAULT_TEST_FILE)
-from .models import download_type, frame_split_type, test_data
+from .constants import DEFAULT_CREATE_FILE_PROMPTS, DEFAULT_PROMPT_FILE
+from .models import download_type, frame_split_type
 from .models.prompt_data import (FileCreationPromptData,
                                  FrameExtractionPromptData)
-
-
-def load_youtube_data() -> test_data.TestData:
-    with open(DEFAULT_TEST_FILE, "r") as f:
-        data = json.load(f)
-        return test_data.TestData(**data)
 
 
 def load_prompt_for_frame_parsing() -> FrameExtractionPromptData:
