@@ -9,9 +9,6 @@ from ..models.test_data import YoutubeObject
 
 
 class CodeExtractionPipeline(Pipeline):
-    class Meta:
-        pointy = "DownloadVideo|->SplitVideoIntoFrames|->RemoveNonCodeFramesRuleBased|->DetectBoundingBox|->CropFrames|->GoogleVisionExtractCodeFromFrames|->LLMParse|->CreateProject"
-
     youtube_object = InputDataField(data_type=list, batch_size=1)
     frame_extraction_fps = InputDataField(data_type=int, required=True)
     duplicate_removal_threshold = InputDataField(data_type=float, required=True)

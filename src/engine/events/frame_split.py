@@ -6,8 +6,7 @@ from typing import Tuple
 import ffmpeg
 from event_pipeline.base import EventBase
 
-from .. import constants
-from .. import utils
+from .. import constants, utils
 from ..models import download_type, frame_split_type
 
 
@@ -27,9 +26,6 @@ class SplitVideoIntoFrames(EventBase):
         video_downloaded: download_type.DownloaderReturnType = (
             self.previous_result.first().content  # type:ignore
         )
-        import pdb 
-        pdb.set_trace() 
-
         self.create_folder_with_video_name(video_downloaded)
 
         ffmpeg.input(video_downloaded.filepath).filter(
