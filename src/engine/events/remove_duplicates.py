@@ -5,8 +5,8 @@ import cv2 as cv
 from event_pipeline.base import EventBase
 from llist import sllist as linkedlist
 
-import utils
-from models import frame_split_type
+from .. import utils
+from ..models import frame_split_type
 
 FLANN_INDEX_KDTREE = 1
 index_params = dict(algorithm=FLANN_INDEX_KDTREE, trees=5)

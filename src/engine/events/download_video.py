@@ -4,8 +4,8 @@ from typing import Tuple
 from event_pipeline.base import EventBase
 from pytubefix import YouTube
 
-from models import download_type
-from models.test_data import YoutubeObject
+from ..models import download_type
+from ..models.test_data import YoutubeObject
 
 
 class DownloadVideo(EventBase):

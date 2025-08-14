@@ -16,9 +16,9 @@ from keras.models import Model
 from keras.preprocessing.image import load_img
 from llist import sllist as linkedlist
 
-import constants
-import utils
-from models import frame_split_type
+from ... import constants
+from ... import utils
+from ...models import frame_split_type
 
 
 class RemoveNonCodeFramesWithModel(EventBase):

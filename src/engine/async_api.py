@@ -1,8 +1,8 @@
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
 
-from models.test_data import YoutubeObject
-from pipeline.extraction_pipeline import CodeExtractionPipeline
+from .models.test_data import YoutubeObject
+from .pipeline.extraction_pipeline import CodeExtractionPipeline
 
 
 async def extract_code_async(
