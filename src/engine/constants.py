@@ -1,4 +1,5 @@
 import pathlib
+from pathlib import Path
 
 #TODO: remember to move the weights.h5 file to the ml_models folder outside of the src folder when you're done
 model_name = "weights.h5"
@@ -9,3 +10,9 @@ ML_MODEL_PATH = pathlib.Path(
 VIDEOS_PATH = "videos"
 TESTING_VIDEOS_PATH = "test_extracted_frames"
 MODEL_IMAGE_TARGET_SIZE = (300, 300)
+
+# CLI defaults for server mode
+DEFAULT_LEVEL = 1
+DEFAULT_TEST_FILE = str(Path("test_data.json"))
+DEFAULT_PROMPT_FILE = str(Path("prompts", "parse_prompts.json"))
+DEFAULT_CREATE_FILE_PROMPTS = str(Path("prompts", "create_file_prompts.json"))

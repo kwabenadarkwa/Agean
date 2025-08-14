@@ -1,6 +1,6 @@
 import os
 import re
-from parser.flags_parser import args as level_args
+from ...constants import DEFAULT_LEVEL
 from pathlib import Path
 from typing import Tuple, Union
 
@@ -8,11 +8,11 @@ from dotenv import load_dotenv
 from event_pipeline.base import EventBase
 from openai import OpenAI
 
-from models.prompt_data import (FileCreationPromptData,
-                                FrameExtractionPromptData)
-from models.test_data import YoutubeObject
-from utils import (load_prompt_data_for_file_creation,
-                   load_prompt_for_frame_parsing)
+from ...models.prompt_data import (FileCreationPromptData,
+                                   FrameExtractionPromptData)
+from ...models.test_data import YoutubeObject
+from ...utils import (load_prompt_data_for_file_creation,
+                      load_prompt_for_frame_parsing)
 
 load_dotenv()
 file_creation_prompt_data: FileCreationPromptData = load_prompt_data_for_file_creation()
@@ -93,15 +93,4 @@ class CreateProject(EventBase):
 
         return str(file_path)
 
-    def get_level_data(self) -> str:
-        match level_args.level:
-            case 1:
-                return frame_extraction_prompt_data.level_1
-            case 2:
-                return frame_extraction_prompt_data.level_2
-            case 3:
-                return frame_extraction_prompt_data.level_3
-            case 4:
-                return frame_extraction_prompt_data.level_4
-            case _:
-                return frame_extraction_prompt_data.level_1
+

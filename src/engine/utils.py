@@ -3,56 +3,31 @@ import os
 import pathlib
 import shutil
 from os import walk
-from parser.flags_parser import args
+from .constants import DEFAULT_LEVEL, DEFAULT_TEST_FILE, DEFAULT_PROMPT_FILE, DEFAULT_CREATE_FILE_PROMPTS
 from typing import Union
 
 from llist import sllist as linkedlist
 from natsort import natsorted
 
-from models import download_type, frame_split_type, test_data
-from models.prompt_data import FileCreationPromptData, FrameExtractionPromptData
-from models.test_data import YoutubeObject
+from .models import download_type, frame_split_type, test_data
+from .models.prompt_data import FileCreationPromptData, FrameExtractionPromptData
+from .models.test_data import YoutubeObject
 
-
-def get_test_videos_level() -> int:
-    return args.level
-
-
-def get_youtube_objects_based_on_level() -> list[YoutubeObject]:
-    """This function returns a list of YoutubeObjects based on the level of the test.
-    Args:
-
-    Returns:
-        list[YoutubeObject]: The list of YoutubeObjects based on the level of the test.
-    """
-    data = load_youtube_data()
-
-    match args.level:
-        case 1:
-            return [youtube_object for youtube_object in data.level_1]
-        case 2:
-            return [youtube_object for youtube_object in data.level_2]
-        case 3:
-            return [youtube_object for youtube_object in data.level_3]
-        case 4:
-            return [youtube_object for youtube_object in data.level_4]
-        case _:
-            return [youtube_object for youtube_object in data.level_1]
 
 
 def load_youtube_data() -> test_data.TestData:
-    with open(args.test_file, "r") as f:
+    with open(DEFAULT_TEST_FILE, "r") as f:
         data = json.load(f)
         return test_data.TestData(**data)
 
 
 def load_prompt_for_frame_parsing() -> FrameExtractionPromptData:
-    with open(args.prompt_file, "r") as f:
+    with open(DEFAULT_PROMPT_FILE, "r") as f:
         data = json.load(f)
         return FrameExtractionPromptData(**data)
 
 def load_prompt_data_for_file_creation() -> FileCreationPromptData: 
-    with open(args.create_file_prompts, "r") as f: 
+    with open(DEFAULT_CREATE_FILE_PROMPTS, "r") as f: 
         data = json.load(f) 
         return FileCreationPromptData(**data)                             
 
