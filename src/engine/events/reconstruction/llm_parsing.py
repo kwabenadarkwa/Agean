@@ -1,14 +1,14 @@
 import json
 import os
-from parser.flags_parser import args as level_args
+from ...parser.flags_parser import args as level_args
 from typing import Dict, Tuple, Union
 
 from dotenv import load_dotenv
 from event_pipeline.base import EventBase
 from openai import OpenAI
 
-from models.prompt_data import FrameExtractionPromptData
-from utils import load_prompt_for_frame_parsing
+from ...models.prompt_data import FrameExtractionPromptData
+from ...utils import load_prompt_for_frame_parsing
 
 load_dotenv()
 prompt_data: FrameExtractionPromptData = load_prompt_for_frame_parsing()

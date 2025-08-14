@@ -4,8 +4,8 @@ from typing import Tuple
 from event_pipeline.base import EventBase
 from llist import sllist as linkedlist
 
-import utils
-from models import frame_split_type
+from ... import utils
+from ...models import frame_split_type
 
 from .config import CodeDetectionConfig
 from .detectors import is_code_frame

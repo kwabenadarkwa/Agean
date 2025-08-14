@@ -5,8 +5,8 @@ import bounding_box_detector_pkg as bbox
 from event_pipeline.base import EventBase
 from PIL import Image
 
-import utils
-from models import frame_split_type
+from .. import utils
+from ..models import frame_split_type
 
 
 class DetectBoundingBox(EventBase):

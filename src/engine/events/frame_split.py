@@ -6,9 +6,9 @@ from typing import Tuple
 import ffmpeg
 from event_pipeline.base import EventBase
 
-import constants
-import utils
-from models import download_type, frame_split_type
+from .. import constants
+from .. import utils
+from ..models import download_type, frame_split_type
 
 
 class SplitVideoIntoFrames(EventBase):

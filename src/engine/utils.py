@@ -3,15 +3,15 @@ import os
 import pathlib
 import shutil
 from os import walk
-from parser.flags_parser import args
+from .parser.flags_parser import args
 from typing import Union
 
 from llist import sllist as linkedlist
 from natsort import natsorted
 
-from models import download_type, frame_split_type, test_data
-from models.prompt_data import FileCreationPromptData, FrameExtractionPromptData
-from models.test_data import YoutubeObject
+from .models import download_type, frame_split_type, test_data
+from .models.prompt_data import FileCreationPromptData, FrameExtractionPromptData
+from .models.test_data import YoutubeObject
 
 
 def get_test_videos_level() -> int:

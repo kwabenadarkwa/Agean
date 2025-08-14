@@ -1,6 +1,6 @@
 import os
 import re
-from parser.flags_parser import args as level_args
+from ...parser.flags_parser import args as level_args
 from pathlib import Path
 from typing import Tuple, Union
 
@@ -8,11 +8,11 @@ from dotenv import load_dotenv
 from event_pipeline.base import EventBase
 from openai import OpenAI
 
-from models.prompt_data import (FileCreationPromptData,
-                                FrameExtractionPromptData)
-from models.test_data import YoutubeObject
-from utils import (load_prompt_data_for_file_creation,
-                   load_prompt_for_frame_parsing)
+from ...models.prompt_data import (FileCreationPromptData,
+                                   FrameExtractionPromptData)
+from ...models.test_data import YoutubeObject
+from ...utils import (load_prompt_data_for_file_creation,
+                      load_prompt_for_frame_parsing)
 
 load_dotenv()
 file_creation_prompt_data: FileCreationPromptData = load_prompt_data_for_file_creation()
@@ -64,6 +64,7 @@ class CreateProject(EventBase):
         generated_code = response.choices[0].message.content
         print(generated_code)
 
+        #TODO: remove the file creation point from here and let the pipeline generate the text file for the server side
         file_path = self._save_generated_file(youtube_object, generated_code)
 
         with open("response.py", "a") as f:

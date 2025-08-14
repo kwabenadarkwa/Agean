@@ -5,10 +5,10 @@
 from event_pipeline.telemetry import (factory, get_metrics, logger,
                                       monitor_events)
 from event_pipeline.telemetry.logger import DefaultBatchTelemetryLogger
-from models.test_data import YoutubeObject
-from pipeline.extraction_pipeline import (CodeExtractionPipeline,
-                                          TestBatchExtractionPipeline)
-from utils import get_test_videos_level, get_youtube_objects_based_on_level
+from .models.test_data import YoutubeObject
+from .pipeline.extraction_pipeline import (CodeExtractionPipeline,
+                                           TestBatchExtractionPipeline)
+from .utils import get_test_videos_level, get_youtube_objects_based_on_level
 
 if __name__ == "__main__":
     monitor_events()

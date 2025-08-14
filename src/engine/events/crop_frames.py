@@ -5,8 +5,8 @@ import bounding_box_detector_pkg as bbox
 import cv2 as cv
 from event_pipeline.base import EventBase
 
-import utils
-from models import frame_split_type
+from .. import utils
+from ..models import frame_split_type
 
 
 class CropFrames(EventBase):

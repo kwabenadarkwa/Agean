@@ -9,8 +9,8 @@ from google.cloud import vision
 from google.oauth2 import service_account
 from PIL import Image
 
-import utils
-from models import frame_split_type
+from ... import utils
+from ...models import frame_split_type
 
 load_dotenv()
 
