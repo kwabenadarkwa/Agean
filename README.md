@@ -2,6 +2,11 @@
 
 A software application that extracts source code from programming tutorial videos.
 
+It has three different parts:
+- The engine which is the core of how everything works that is built with the event pipeline 
+- The server which serves the engine as a REST API that can be used with whatever frontend you want.
+- The browser extension which uses the server to extract code from whatever youtube video you're currently watching.
+
 _Notes_
 
 - Tesseract has to be installed and added to the path for this to work(I am going to end up using something else but for now)
@@ -62,31 +67,29 @@ python3 main.py
 - [x] use the literature to find the best method for frame content extraction(replace with what you currently have)
 
 ==Final countdown tomorrow==
+
 - [x] add an event that creates files after the LLM has finished/ also have another one if you don't use an LLM to parse(they could be the same mmom)
 - [ ] package tool as a browser extension(might need docker)
 - [ ] continue the implementation part of writing the report
-
+- [ ] maybe it might be a sensible step to figure out which bounding box contains the code elements. # so maybe instead of actually finding the bouding box. we send the texts object that is extracted. we comb through the texts object # to find which of the descriptions actually contains code. and then remove the ones that don't. that could be a step after this point(using the google ocr thing of course.). this couuld be the final form to reduce the amount of time that things take. nice
 
 ## TESTING
 
-- [ ] Test rule based filtering in the entire pipeline as a whole
-- [ ] Test
+- [x] Test rule based filtering in the entire pipeline as a whole
 - [ ] Write a test condition after the LLM is done parsing everything
 
-
-
 ## BUGS
+
 - [ ] add a thing that checks the input size of the data to the LLM and stop it in that case(or iterate and then split the thing into mutiple prompts or something)
 
+_Remaining Points_
 
-
-*Remaining Points*
 - create a standard json file to measure the results against
 - finish the bounding box detection
 - decide which method has higher accuracy
 - reconstruct the file structure for level 1 and level 2 and level 3
 - for level 4 train model to determine file that's opened first and assign code snippet to opened file
-- create the files that are detected in the file structure for level 4 
+- create the files that are detected in the file structure for level 4
 - use image super resolution to increase the resolution of the images(maybe that's going to increase the accuracy of the results)
 
 _Current Point_(Friday, July 18th 2025)
@@ -106,29 +109,32 @@ _Current Point_(Saturday, July 19th 2025)
 - The student tier that I have on Microsoft Azure has ended because I have overused my quota. I am going to have to pay for the premium version of deepseek.
 - I've been able to add the LLM to the pipeline and now I'm paying some money to use deepseek.
 
-*Next Points*(Sunday, July 20th 2025)
+_Next Points_(Sunday, July 20th 2025)
+
 - Fix the issues that are occurring with the metrics feature
 - include tracking of the metrics per event in the pipeline
 
 _Current Point_(Sunday, July 20th 2025)
-- fixed the metrics issues so now the metrics show and you get a json file with them. 
+
+- fixed the metrics issues so now the metrics show and you get a json file with them.
 - they show how long each event takes in the pipeline but there's the problem with the batch pipeline not being tracked properly
 
 _Next Points_(Monday, July 21st 2025)
+
 - do research on the bounding box detection
 - figure out how to use it based on the literature
 
 _Current Point_(Monday, July 20th 2025)
+
 - Read through PSC2CODE code and find where they're doing the bounding box detection
 - After that, use the code and the data they have to train a model that you can use
 
-
-
 _Current Point_(Monday, July 28th 2025)
-- I've started encoding the data into the json file and I've done just one.
-- I have 19 more to go. 
-- it's taking more time than I thought it would take 
 
+- I've started encoding the data into the json file and I've done just one.
+- I have 19 more to go.
+- it's taking more time than I thought it would take
 
 _Current Point_(Tuesday, July 20th 2025)
+
 - continue the encoding and try and finish it

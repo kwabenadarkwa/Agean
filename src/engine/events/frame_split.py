@@ -27,6 +27,9 @@ class SplitVideoIntoFrames(EventBase):
         video_downloaded: download_type.DownloaderReturnType = (
             self.previous_result.first().content  # type:ignore
         )
+        import pdb 
+        pdb.set_trace() 
+
         self.create_folder_with_video_name(video_downloaded)
 
         ffmpeg.input(video_downloaded.filepath).filter(

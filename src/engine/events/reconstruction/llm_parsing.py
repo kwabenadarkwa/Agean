@@ -50,9 +50,9 @@ class LLMParse(EventBase):
 
         print(response.choices[0].message.content)
 
-        with open("response.txt", "a") as f:
-            f.write(str(response.choices[0].message.content))
-
+        # with open("response.txt", "a") as f:
+        #     f.write(str(response.choices[0].message.content))
+        #
         return True, response.choices[0].message.content
 
     def get_level_data(self) -> str:
