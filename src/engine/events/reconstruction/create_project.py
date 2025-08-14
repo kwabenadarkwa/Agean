@@ -30,7 +30,7 @@ class CreateProject(EventBase):
             api_key=f"{os.getenv("DEEPSEEK_API_KEY")}",
             base_url="https://api.deepseek.com",
         )
-        level_info = self.get_level_data()
+        # level_info = self.get_level_data()
         input_data = self.previous_result.first().content  # type:ignore
 
         youtube_info = f"""
@@ -38,8 +38,6 @@ class CreateProject(EventBase):
         - Title: {youtube_object[0].title}
         - Link: {youtube_object[0].link}
         - Duration: {youtube_object[0].duration}
-        - IDE/Theme: {youtube_object[0].ide}
-        - Theme: {youtube_object[0].theme}
 
         Please include this information as a comment header in the generated Python file to attribute the source.
         """

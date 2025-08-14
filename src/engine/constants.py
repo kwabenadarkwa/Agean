@@ -1,5 +1,6 @@
 import pathlib
 
+#TODO: remember to move the weights.h5 file to the ml_models folder outside of the src folder when you're done
 model_name = "weights.h5"
 model_folder_name = "ml_models"
 ML_MODEL_PATH = pathlib.Path(
