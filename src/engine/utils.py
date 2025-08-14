@@ -3,16 +3,16 @@ import os
 import pathlib
 import shutil
 from os import walk
-from .constants import DEFAULT_LEVEL, DEFAULT_TEST_FILE, DEFAULT_PROMPT_FILE, DEFAULT_CREATE_FILE_PROMPTS
 from typing import Union
 
 from llist import sllist as linkedlist
 from natsort import natsorted
 
+from .constants import (DEFAULT_CREATE_FILE_PROMPTS, DEFAULT_PROMPT_FILE,
+                        DEFAULT_TEST_FILE)
 from .models import download_type, frame_split_type, test_data
-from .models.prompt_data import FileCreationPromptData, FrameExtractionPromptData
-from .models.test_data import YoutubeObject
-
+from .models.prompt_data import (FileCreationPromptData,
+                                 FrameExtractionPromptData)
 
 
 def load_youtube_data() -> test_data.TestData:
@@ -26,10 +26,11 @@ def load_prompt_for_frame_parsing() -> FrameExtractionPromptData:
         data = json.load(f)
         return FrameExtractionPromptData(**data)
 
-def load_prompt_data_for_file_creation() -> FileCreationPromptData: 
-    with open(DEFAULT_CREATE_FILE_PROMPTS, "r") as f: 
-        data = json.load(f) 
-        return FileCreationPromptData(**data)                             
+
+def load_prompt_data_for_file_creation() -> FileCreationPromptData:
+    with open(DEFAULT_CREATE_FILE_PROMPTS, "r") as f:
+        data = json.load(f)
+        return FileCreationPromptData(**data)
 
 
 def load_frame_names(video_frames: frame_split_type.FrameSplitReturnType) -> linkedlist:

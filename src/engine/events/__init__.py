@@ -13,8 +13,7 @@ from .download_video import DownloadVideo
 from .dummy_event import DummyEvent
 from .dummy_event_two import DummyEventTwo
 from .frame_split import SplitVideoIntoFrames
-from .ocr_code_extraction import (GoogleVisionExtractCodeFromFrames,
-                                  PytesseractExtractCodeFromFrames)
+from .ocr_code_extraction import GoogleVisionExtractCodeFromFrames
 from .reconstruction import CreateProject, LLMParse
 from .remove_duplicates import RemoveDuplicates
 
@@ -22,7 +21,6 @@ __all__ = [
     "CropFrames",
     "DetectBoundingBox",
     "DownloadVideo",
-    "PytesseractExtractCodeFromFrames",
     "SplitVideoIntoFrames",
     "LLMParse",
     "CreateProject",

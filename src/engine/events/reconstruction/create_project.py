@@ -1,6 +1,5 @@
 import os
 import re
-from ...constants import DEFAULT_LEVEL
 from pathlib import Path
 from typing import Tuple, Union
 
@@ -64,7 +63,7 @@ class CreateProject(EventBase):
         generated_code = response.choices[0].message.content
         print(generated_code)
 
-        #TODO: remove the file creation point from here and let the pipeline generate the text file for the server side
+        # TODO: remove the file creation point from here and let the pipeline generate the text file for the server side
         file_path = self._save_generated_file(youtube_object, generated_code)
 
         with open("response.py", "a") as f:
@@ -93,5 +92,3 @@ class CreateProject(EventBase):
             f.write(code_content)
 
         return str(file_path)
-
-

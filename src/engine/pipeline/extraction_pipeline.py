@@ -1,10 +1,10 @@
 from event_pipeline.fields import InputDataField
 from event_pipeline.pipeline import BatchPipeline, Pipeline
+
 from ..events import (CreateProject, CropFrames, DetectBoundingBox,
-                    GoogleVisionExtractCodeFromFrames, LLMParse,
-                    PytesseractExtractCodeFromFrames, RemoveDuplicates,
-                    RemoveNonCodeFramesRuleBased, RemoveNonCodeFramesWithModel,
-                    SplitVideoIntoFrames)
+                      GoogleVisionExtractCodeFromFrames, LLMParse,
+                      RemoveDuplicates, RemoveNonCodeFramesRuleBased,
+                      RemoveNonCodeFramesWithModel, SplitVideoIntoFrames)
 from ..models.test_data import YoutubeObject
 
 
