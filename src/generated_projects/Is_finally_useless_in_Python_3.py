@@ -1,6 +1,6 @@
 """
 Extracted from YouTube Tutorial
-Title: Is 'finally' useless in Python?
+Title: Is "finally" useless in Python?
 Source: https://www.youtube.com/watch?v=92JdbyISpCo&t=4s
 Duration: 7:01
 IDE/Theme: Unknown

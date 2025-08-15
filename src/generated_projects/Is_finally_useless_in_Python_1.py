@@ -1,10 +1,9 @@
 """
 Extracted from YouTube Tutorial
-Title: Is "finally" Useless In Python?.json
-Source: https://youtu.be/92JdbyISpCo?si=WxtJSC5WFiWcxGJXb
+Title: Is "finally" useless in Python?
+Source: https://www.youtube.com/watch?v=92JdbyISpCo&t=4s
 Duration: 7:01
-IDE/Theme: Pycharm
-Theme: Dark
+IDE/Theme: Unknown
 
 This code was automatically extracted and reconstructed from video frames.
 Only code visible in the original video frames is included.
@@ -25,12 +24,13 @@ except ValueError:
 
 print('Handling ValueError...')
 sys.exit('Terminating program')
-print('finally is being executed...')
+finally:
+    print('finally is being executed...')
 
-try:
-    raise ValueError('Bad value')
+raise ValueError('Bad value')
 except ValueError:
     print('Handling ValueError...')
     return 1
 finally:
     return 0
+```

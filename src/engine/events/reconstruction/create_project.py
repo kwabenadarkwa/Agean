@@ -61,32 +61,31 @@ class CreateProject(EventBase):
         generated_code = response.choices[0].message.content
         print(generated_code)
 
-        # TODO: remove the file creation point from here and let the pipeline generate the text file for the server side
-        file_path = self._save_generated_file(youtube_object, generated_code)
+        # file_path = self._save_generated_file(youtube_object, generated_code)
 
-        with open("response.py", "a") as f:
-            # f.write(f"\n--- Generated file: {file_path} ---\n")
-            f.write(str(generated_code))
+        # with open("response.py", "a") as f:
+        #     # f.write(f"\n--- Generated file: {file_path} ---\n")
+        #     f.write(str(generated_code))
+        #
+        return True, generated_code
 
-        return True, f"Generated Python file: {file_path}"
-
-    def _save_generated_file(
-        self, youtube_object: list[YoutubeObject], code_content: str
-    ) -> str:
-        safe_title = re.sub(r"[^\w\s-]", "", youtube_object[0].title)
-        safe_title = re.sub(r"[-\s]+", "_", safe_title).strip("_")
-
-        output_dir = Path("generated_projects")
-        output_dir.mkdir(exist_ok=True)
-
-        file_path = output_dir / f"{safe_title}.py"
-
-        counter = 1
-        while file_path.exists():
-            file_path = output_dir / f"{safe_title}_{counter}.py"
-            counter += 1
-
-        with open(file_path, "w", encoding="utf-8") as f:
-            f.write(code_content)
-
-        return str(file_path)
+    # def _save_generated_file(
+    #     self, youtube_object: list[YoutubeObject], code_content: str
+    # ) -> str:
+    #     safe_title = re.sub(r"[^\w\s-]", "", youtube_object[0].title)
+    #     safe_title = re.sub(r"[-\s]+", "_", safe_title).strip("_")
+    #
+    #     output_dir = Path("generated_projects")
+    #     output_dir.mkdir(exist_ok=True)
+    #
+    #     file_path = output_dir / f"{safe_title}.py"
+    #
+    #     counter = 1
+    #     while file_path.exists():
+    #         file_path = output_dir / f"{safe_title}_{counter}.py"
+    #         counter += 1
+    #
+    #     with open(file_path, "w", encoding="utf-8") as f:
+    #         f.write(code_content)
+    #
+    #     return str(file_path)

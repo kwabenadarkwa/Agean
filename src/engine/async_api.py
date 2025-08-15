@@ -10,7 +10,7 @@ async def extract_code_async(
     frame_extraction_fps: int,
     duplicate_removal_threshold: float,
     level: int,
-):
+)->str:
     """
     Async wrapper for code extraction pipeline.
     Runs pipeline in thread pool to avoid blocking event loop to allow for processing of multiple requests at the same time.
@@ -26,9 +26,9 @@ async def extract_code_async(
         )
         return pipeline.start()
 
-    # Run in thread pool executor
     with ThreadPoolExecutor() as executor:
         result = await loop.run_in_executor(executor, run_pipeline)
+        # await loop.run_in_executor(executor, run_pipeline)
 
-    # INFO: this returns an execution context object which isn't what we want in particular so remember to change what happens in the end
-    return result
+    print("this is the execution result", result.get_tail_context().execution_result[0].content)
+    return result.get_tail_context().execution_result[0].content

@@ -1,7 +1,7 @@
 """
 Extracted from YouTube Tutorial
-Title: Is "finally" Useless In Python?.json
-Source: https://youtu.be/92JdbyISpCo?si=WxtJSC5WFiWcxGJXb
+Title: Is "finally" useless in Python?
+Source: https://www.youtube.com/watch?v=92JdbyISpCo&t=4s
 Duration: 7:01
 IDE/Theme: Unknown
 
@@ -27,10 +27,10 @@ sys.exit('Terminating program')
 finally:
     print('finally is being executed...')
 
-try:
-    raise ValueError('Bad value')
+raise ValueError('Bad value')
 except ValueError:
     print('Handling ValueError...')
     return 1
 finally:
     return 0
+```
