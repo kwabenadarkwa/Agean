@@ -3,7 +3,6 @@ import sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 # TODO: Fix engine imports - currently having issues with event_pipeline framework
-from typing import Union
 
 from fastapi import FastAPI
 from pydantic import BaseModel

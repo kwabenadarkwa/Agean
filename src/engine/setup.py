@@ -1,18 +1,12 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
-#TODO: add the bounding box detector to the requirements
-#TODO: add the event pipeline to the requirements(the deployed version would still work for what the thing is right now)
+# TODO: add the bounding box detector to the requirements
+# TODO: add the event pipeline to the requirements(the deployed version would still work for what the thing is right now)
 setup(
     name="agean-engine",
     version="0.1.0",
     description="Agean code extraction pipeline from youtube video engine",
-    packages=find_packages(exclude=[
-        "test_extracted_frames*",
-        "generated_projects*",
-        "expected_data*",
-        "ml_models*",
-        "tuning*",
-    ]),
+    packages=find_packages(exclude=[]),
     install_requires=[
         "absl-py==2.3.1",
         "aiohappyeyeballs==2.6.1",
@@ -111,7 +105,7 @@ setup(
         "Werkzeug==3.1.3",
         "wheel==0.45.1",
         "wrapt==1.17.3",
-        "yarl==1.20.1"
+        "yarl==1.20.1",
     ],
     python_requires=">=3.8",
     author="Your Name",

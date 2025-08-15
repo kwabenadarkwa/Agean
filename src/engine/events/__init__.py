@@ -10,8 +10,6 @@ from .code_frame_filtering import (RemoveNonCodeFramesRuleBased,
 from .crop_frames import CropFrames
 from .detect_bounding_box import DetectBoundingBox
 from .download_video import DownloadVideo
-from .dummy_event import DummyEvent
-from .dummy_event_two import DummyEventTwo
 from .frame_split import SplitVideoIntoFrames
 from .ocr_code_extraction import GoogleVisionExtractCodeFromFrames
 from .reconstruction import CreateProject, LLMParse
@@ -26,8 +24,6 @@ __all__ = [
     "CreateProject",
     "RemoveDuplicates",
     "GoogleVisionExtractCodeFromFrames",
-    "DummyEvent",
-    "DummyEventTwo",
     # Code frame filtering events
     "RemoveNonCodeFramesRuleBased",
     "RemoveNonCodeFramesWithModel",

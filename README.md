@@ -53,7 +53,6 @@ python3 main.py
 - [x] add json file and refactor pipeline to test for particular video levels
 - [x] verify that the batch pipeline works how it should
 - [x] refactor the pipeline to use the youtube object instead of the link
-  - would be needed when it comes to the gathering of data
 - [x] refactor the main to use command line flags when starting to make it easier to test between different levels
 - [x] make it such that we can use a particular pipeline based on level passed in the flag
 - [x] add an event for dealing with the LLM
@@ -65,6 +64,7 @@ python3 main.py
 - [x] create a standard json file to measure the results against
 - [x] integrate bounding box detection
 - [x] use the literature to find the best method for frame content extraction(replace with what you currently have)
+- [ ] design what the browser extension would look like
 
 ==Final countdown tomorrow==
 
@@ -138,3 +138,11 @@ _Current Point_(Monday, July 28th 2025)
 _Current Point_(Tuesday, July 20th 2025)
 
 - continue the encoding and try and finish it
+
+_Current Point_(Thursday, August 15th 2025)
+
+_Next Steps_(Thursday, August 15th 2025)
+- [ ] design what the browser extension would look like
+- [ ] build the browser extension with react
+- [ ] connect the browser extension to the server
+
