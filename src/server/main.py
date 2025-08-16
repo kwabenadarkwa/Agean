@@ -2,14 +2,15 @@ import os
 import sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
-# TODO: Fix engine imports - currently having issues with event_pipeline framework
 
 from fastapi import FastAPI
 from pydantic import BaseModel
 
 from engine import YoutubeObject, async_api
 
-# TODO: engine could work if I just imported it as a package but I'll do that after I make sure that the server connection actually works
+# TODO: engine could work if I just imported it as a package but
+# I'll do that after I make sure that the server connection actually works
+#upload the engine package to pypi so that I can import it and use it with docker easily when I deploy the server
 app = FastAPI()
 
 
@@ -31,8 +32,9 @@ async def read_root():
 async def extract_code(request: ExtractCodeRequest):
     try:
         youtube_obj = YoutubeObject(
-        #
-            title=request.title, link=request.video_url, duration=request.duration
+            title=request.title,
+            link=request.video_url,
+            duration=request.duration,
         )
 
         result = await async_api.extract_code_async(
