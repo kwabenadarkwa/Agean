@@ -43,9 +43,7 @@ const Popup = () => {
         <button onClick={goGithubSite}>
           <img src={chrome.runtime.getURL(logo)} className="App-logo" alt="logo" />
         </button>
-        <p>
-          Edit <code>pages/popup/src/Popup.tsx</code>
-        </p>
+        <p>View in side panel to view properly</p>
         <button
           className={cn(
             'mt-4 rounded px-4 py-1 font-bold shadow hover:scale-105',
