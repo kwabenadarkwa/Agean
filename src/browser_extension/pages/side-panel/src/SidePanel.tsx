@@ -1,6 +1,7 @@
 import '@src/SidePanel.css';
 import { useCallback, useMemo } from 'react';
 import { useStorage, useYouTubeVideo, useCodeExtraction, withErrorBoundary, withSuspense } from '@extension/shared';
+import { sanitizeTitle } from '@extension/shared';
 import { ageanConfigStorage } from '@extension/storage';
 import {
   ErrorDisplay,
@@ -33,7 +34,12 @@ const SidePanel = () => {
       return {
         type: 'warning' as StatusType,
         message: videoError,
-        details: videoError === 'Not on YouTube' ? 'Please navigate to a YouTube video page' : undefined,
+        details:
+          videoError === 'Not on YouTube'
+            ? 'Please navigate to a YouTube video page'
+            : videoError === 'Please refresh the page to use Agean'
+              ? 'Refresh this YouTube page and reopen the extension'
+              : undefined,
       };
     }
 
@@ -83,7 +89,7 @@ const SidePanel = () => {
 
     const request: ExtractCodeRequest = {
       video_url: videoData.url,
-      title: videoData.title,
+      title: sanitizeTitle(videoData.title),
       duration: videoData.duration,
       frame_extraction_fps: config.frameExtractionFps,
       duplicate_removal_threshold: config.duplicateRemovalThreshold,
@@ -133,7 +139,19 @@ const SidePanel = () => {
       {/* Content */}
       <div className="space-y-4 p-4">
         {/* Status */}
-        <StatusIndicator status={status.type} message={status.message} details={status.details} />
+        <StatusIndicator
+          status={status.type}
+          message={status.message}
+          details={status.details}
+          showRefreshButton={videoError === 'Please refresh the page to use Agean'}
+          onRefresh={() => {
+            chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+              if (tabs[0]?.id) {
+                chrome.tabs.reload(tabs[0].id);
+              }
+            });
+          }}
+        />
 
         {/* Video Info */}
         {videoData && (

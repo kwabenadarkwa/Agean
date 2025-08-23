@@ -5,6 +5,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 from engine import YoutubeObject, async_api
 
@@ -12,6 +13,14 @@ from engine import YoutubeObject, async_api
 # I'll do that after I make sure that the server connection actually works
 #upload the engine package to pypi so that I can import it and use it with docker easily when I deploy the server
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class ExtractCodeRequest(BaseModel):
@@ -36,6 +45,12 @@ async def extract_code(request: ExtractCodeRequest):
             link=request.video_url,
             duration=request.duration,
         )
+
+        print("youtube object created", youtube_obj)
+        print("frame extraction fps", request.frame_extraction_fps)
+        print("duplicate removal threshold", request.duplicate_removal_threshold)
+        print("level", request.level)
+
 
         result = await async_api.extract_code_async(
             youtube_object=[youtube_obj],

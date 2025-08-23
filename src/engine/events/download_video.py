@@ -24,6 +24,7 @@ class DownloadVideo(EventBase):
         # INFO: the paraamter that is passed inside of the batch pipeline is a list of strings
         # hence to access it we need to access the first element of the list
         link_to_video = youtube_object[0].link
+        video_title = youtube_object[0].title
         yt = YouTube(link_to_video)
         filepath = pathlib.Path("videos", yt.title + ".mp4")
 
@@ -43,4 +44,4 @@ class DownloadVideo(EventBase):
             # TODO: find something better to return here
             return False, download_type.DownloaderReturnType(None, None, None)
 
-        return True, download_type.DownloaderReturnType(yt.title, filepath, captions)
+        return True, download_type.DownloaderReturnType(video_title, filepath, captions)
