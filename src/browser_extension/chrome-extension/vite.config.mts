@@ -6,11 +6,35 @@ import { watchPublicPlugin, watchRebuildPlugin } from '@extension/hmr';
 import { watchOption } from '@extension/vite-config';
 import env, { IS_DEV, IS_PROD } from '@extension/env';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import { copyFileSync, mkdirSync } from 'node:fs';
 
 const rootDir = resolve(import.meta.dirname);
 const srcDir = resolve(rootDir, 'src');
 
 const outDir = resolve(rootDir, '..', 'dist');
+
+// Plugin to copy locales
+const copyLocalesPlugin = (): PluginOption => ({
+  name: 'copy-locales',
+  buildStart() {
+    const localesDir = resolve(rootDir, '..', 'packages', 'i18n', 'locales');
+    const distLocalesDir = resolve(outDir, '_locales');
+
+    try {
+      // Copy English locales
+      mkdirSync(resolve(distLocalesDir, 'en'), { recursive: true });
+      copyFileSync(resolve(localesDir, 'en', 'messages.json'), resolve(distLocalesDir, 'en', 'messages.json'));
+
+      // Copy Korean locales
+      mkdirSync(resolve(distLocalesDir, 'ko'), { recursive: true });
+      copyFileSync(resolve(localesDir, 'ko', 'messages.json'), resolve(distLocalesDir, 'ko', 'messages.json'));
+
+      console.log('✅ Locales copied to dist/_locales');
+    } catch (error) {
+      console.error('❌ Failed to copy locales:', error);
+    }
+  },
+});
 export default defineConfig({
   define: {
     'process.env': env,
@@ -28,6 +52,7 @@ export default defineConfig({
     }) as PluginOption,
     watchPublicPlugin(),
     makeManifestPlugin({ outDir }),
+    copyLocalesPlugin(),
     IS_DEV && watchRebuildPlugin({ reload: true, id: 'chrome-extension-hmr' }),
     nodePolyfills(),
   ],

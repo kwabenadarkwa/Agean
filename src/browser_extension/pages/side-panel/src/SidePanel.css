@@ -1,4 +1,395 @@
-/* Custom scrollbar for dark theme */
+/* Agean Dark Theme Styles */
+.agean-container {
+  background: #1a1b23;
+  min-height: 100vh;
+  padding: 16px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Header */
+.agean-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.agean-app-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.agean-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.agean-subtitle {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Cards */
+.agean-card {
+  background: #252730;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid #374151;
+}
+
+/* Status Card */
+.agean-status-card {
+  background: #064e3b;
+  border: 1px solid #065f46;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.agean-status-icon {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.agean-status-text {
+  color: #10b981;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.agean-status-subtext {
+  color: #9ca3af;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* Video Card */
+.agean-video-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.agean-thumbnail-container {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.agean-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.agean-code-preview {
+  width: 64px;
+  height: 64px;
+  background: #374151;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.agean-video-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.agean-video-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.agean-green-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+}
+
+.agean-detected-text {
+  color: #10b981;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.agean-video-title {
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.agean-video-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #9ca3af;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.agean-video-url {
+  color: #6b7280;
+  font-size: 12px;
+  font-family: monospace;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Configuration */
+.agean-config-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.agean-config-label {
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* Custom Slider */
+.agean-slider-container {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.agean-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #374151;
+  outline: none;
+  margin: 8px 0;
+}
+
+.agean-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: 2px solid #1a1b23;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.agean-slider::-webkit-slider-thumb:hover {
+  background: #2563eb;
+  transform: scale(1.1);
+}
+
+.agean-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+  border: 2px solid #1a1b23;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.agean-slider-labels {
+  display: flex;
+  justify-content: space-between;
+  color: #9ca3af;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Level Buttons */
+.agean-level-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.agean-level-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #4b5563;
+  background: #374151;
+  color: #9ca3af;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.agean-level-button:hover {
+  border-color: #6b7280;
+  background: #4b5563;
+}
+
+.agean-level-button.active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+}
+
+.agean-help-text {
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* Extract Button */
+.agean-extract-button {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.agean-extract-button:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+  transform: translateY(-1px);
+}
+
+.agean-extract-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Code Block */
+.agean-code-block {
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+  position: relative;
+}
+
+.agean-code-block:hover .agean-copy-button {
+  opacity: 1;
+}
+
+.agean-copy-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(55, 65, 81, 0.9);
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  color: #9ca3af;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  padding: 8px;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.agean-copy-button:hover {
+  background: #4b5563;
+  color: white;
+  transform: scale(1.05);
+}
+
+.agean-copy-button.copied {
+  background: #059669;
+  color: white;
+  opacity: 1;
+}
+
+.agean-copy-all-button {
+  background: #374151;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  color: #9ca3af;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.agean-copy-all-button:hover {
+  background: #4b5563;
+  color: white;
+}
+
+.agean-copy-all-button.copied {
+  background: #059669;
+  color: white;
+}
+
+/* Animations */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -16,77 +407,10 @@
   background: #6b7280;
 }
 
-/* Custom slider styles */
-.slider::-webkit-slider-thumb {
-  appearance: none;
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  background: #3b82f6;
-  cursor: pointer;
-  border: 2px solid #1f2937;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.slider::-webkit-slider-thumb:hover {
-  background: #2563eb;
-  transform: scale(1.1);
-}
-
-.slider::-webkit-slider-track {
-  height: 8px;
-  border-radius: 4px;
-  background: #374151;
-}
-
-.slider::-moz-range-thumb {
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  background: #3b82f6;
-  cursor: pointer;
-  border: 2px solid #1f2937;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.slider::-moz-range-track {
-  height: 8px;
-  border-radius: 4px;
-  background: #374151;
-}
-
-/* Line clamp utility */
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* Smooth transitions */
-* {
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
 /* Focus styles for accessibility */
-button:focus-visible,
-input:focus-visible {
+.agean-extract-button:focus-visible,
+.agean-level-button:focus-visible,
+.agean-slider:focus-visible {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
-}
-
-/* Animation for status changes */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.3s ease-out;
 }

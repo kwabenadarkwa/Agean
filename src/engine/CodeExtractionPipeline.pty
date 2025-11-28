@@ -1,2 +1,1 @@
-#DownloadVideo|->SplitVideoIntoFrames|->RemoveNonCodeFramesRuleBased|->DetectBoundingBox|->CropFrames|->GoogleVisionExtractCodeFromFrames|->LLMParse|->CreateProject
-DownloadVideo|->SplitVideoIntoFrames|->DetectBoundingBox|->CropFrames|->GoogleVisionExtractCodeFromFrames|->LLMParse|->CreateProject
+DownloadVideo|->SplitVideoIntoFrames|->RemoveNonCodeFramesRuleBased|->DetectBoundingBox|->CropFrames|->GoogleVisionExtractCodeFromFrames|->LLMParse|->CreateProject

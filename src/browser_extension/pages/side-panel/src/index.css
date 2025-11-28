@@ -1,1 +1,12 @@
 @import '@extension/ui/global.css';
+
+body {
+  background: #1a1b23 !important;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  background: #1a1b23;
+  min-height: 100vh;
+}

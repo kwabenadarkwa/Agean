@@ -62,7 +62,8 @@ class YouTubeVideoDetector {
 
   private init(): void {
     this.setupUrlWatcher();
-    this.detectCurrentVideo();
+    // Try immediate detection first, then fallback to delayed detection
+    this.performDetection().catch(() => this.detectCurrentVideo());
     this.setupMessageListener();
   }
 
@@ -77,7 +78,8 @@ class YouTubeVideoDetector {
       }
     };
 
-    setInterval(checkUrlChange, 5000);
+    // Reduce URL check interval from 5000ms to 1000ms for faster navigation detection
+    setInterval(checkUrlChange, 1000);
     window.addEventListener('yt-navigate-finish', this.detectCurrentVideo.bind(this), { passive: true });
   }
 
@@ -262,7 +264,7 @@ class YouTubeVideoDetector {
     return duration.includes(':') && /^\d+:\d{2}(:\d{2})?$/.test(duration);
   }
 
-  private async getVideoDurationWithRetry(maxRetries: number = 5, delayMs: number = 2000): Promise<string | null> {
+  private async getVideoDurationWithRetry(maxRetries: number = 3, delayMs: number = 1000): Promise<string | null> {
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       const duration = this.getVideoDurationFromPlayer();
       if (duration && duration !== 'Unknown Duration') {
@@ -343,12 +345,14 @@ class YouTubeVideoDetector {
       clearTimeout(this.detectionTimeout);
     }
 
-    this.detectionTimeout = setTimeout(() => this.performDetection(), 3000);
+    // Reduce detection delay from 3000ms to 1000ms for faster response
+    this.detectionTimeout = setTimeout(() => this.performDetection(), 1000);
   }
 
   private async performDetection(): Promise<void> {
     const now = Date.now();
-    if (now - this.lastDetectionTime < 5000) return;
+    // Reduce throttling from 5000ms to 2000ms for faster updates
+    if (now - this.lastDetectionTime < 2000) return;
     this.lastDetectionTime = now;
 
     if (!this.isYouTubeVideoPage()) {

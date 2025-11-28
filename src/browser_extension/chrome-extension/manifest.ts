@@ -30,7 +30,7 @@ const manifest = {
   },
   version: packageJson.version,
   description: 'Extract code content from YouTube programming tutorials',
-  host_permissions: ['*://www.youtube.com/*', '*://localhost/*', '*://127.0.0.1/*'],
+  host_permissions: ['*://www.youtube.com/*', '*://localhost/*', '*://127.0.0.1/*', '*://0.0.0.0/*'],
   permissions: ['storage', 'scripting', 'tabs', 'notifications', 'sidePanel', 'activeTab'],
   action: {
     default_icon: 'icon-34.png',

@@ -13,20 +13,13 @@ ageanConfigStorage.get().then(config => {
 chrome.runtime.onInstalled.addListener(details => {
   if (details.reason === 'install') {
     logger.info('Agean extension installed');
-    // Open side panel on YouTube if user is already there
-    chrome.tabs.query({ url: '*://www.youtube.com/*' }, tabs => {
-      if (tabs.length > 0 && tabs[0].id) {
-        chrome.sidePanel.open({ tabId: tabs[0].id });
-      }
-    });
+    logger.info('Click the extension icon on YouTube pages to open the side panel');
   }
 });
 
-// Auto-open side panel when navigating to YouTube videos (optional)
+// Log when navigating to YouTube videos
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === 'complete' && tab.url?.includes('youtube.com/watch')) {
-    // Optionally auto-open side panel - you can disable this if you prefer manual opening
-    // chrome.sidePanel.open({ tabId });
     logger.info('YouTube video page detected:', tab.url);
   }
 });
@@ -46,6 +39,52 @@ chrome.action.onClicked.addListener(tab => {
     });
     logger.info('Extension icon clicked on non-YouTube page');
   }
+});
+
+// Handle messages from side panel and content scripts
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  logger.info('Message received:', message.type);
+
+  if (message.type === 'GET_CURRENT_VIDEO_FROM_SIDEPANEL') {
+    // Get the current active tab
+    chrome.tabs.query({ active: true, currentWindow: true }, async tabs => {
+      const tab = tabs[0];
+
+      if (!tab?.id || !tab.url?.includes('youtube.com/watch')) {
+        sendResponse({
+          type: 'CURRENT_VIDEO_RESPONSE',
+          data: null,
+        });
+        return;
+      }
+
+      try {
+        // Send message to content script to get current video data
+        const response = await chrome.tabs.sendMessage(tab.id, {
+          type: 'GET_CURRENT_VIDEO',
+        });
+
+        logger.info('Video data from content script:', response);
+        sendResponse(response);
+      } catch (error) {
+        logger.error('Error getting video data from content script:', error);
+        sendResponse({
+          type: 'CURRENT_VIDEO_RESPONSE',
+          data: null,
+        });
+      }
+    });
+
+    return true; // Keep message channel open for async response
+  }
+
+  // Forward VIDEO_DETECTED messages from content script to side panel
+  if (message.type === 'VIDEO_DETECTED') {
+    logger.info('Forwarding VIDEO_DETECTED message');
+    // This message will be forwarded to all listeners (including side panel)
+  }
+
+  return false;
 });
 
 logger.info('Agean background script loaded');
