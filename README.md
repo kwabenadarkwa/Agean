@@ -8,7 +8,7 @@ It has three different parts:
 - The browser extension which uses the server to extract code from whatever youtube video you're currently watching.
 
 ## Agean Demo
-<iframe width="560" height="315" src="https://www.youtube.com/embed/URtZSVQESsM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Agean Demo Video](https://img.youtube.com/vi/URtZSVQESsM/0.jpg)](https://www.youtube.com/watch?v=URtZSVQESsM)
 
 ## Agean Engine
 
